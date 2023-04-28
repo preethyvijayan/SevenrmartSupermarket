@@ -1,0 +1,244 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>33/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Apr 28 17:16:27 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>188 seconds (188565 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageOfferCodeTest.toaddOfferCodein_ManageOfferCodePage()'><b>toaddOfferCodein_ManageOfferCodePage</b><br>Test class: com.obsqura.testscripts.ManageOfferCodeTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManageOfferCodeTest@54e041a4</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ExpenseCategoryTest.resettheTitle_usingReseButton()'><b>resettheTitle_usingReseButton</b><br>Test class: com.obsqura.testscripts.ExpenseCategoryTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ExpenseCategoryTest@5c86dbc5</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.PushNotificationTest.tosendPushnotification()'><b>tosendPushnotification</b><br>Test class: com.obsqura.testscripts.PushNotificationTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.PushNotificationTest@4e0ae11f</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.LoginTest.loginwithValidusernameandValidPassword()'><b>loginwithValidusernameandValidPassword</b><br>Test class: com.obsqura.testscripts.LoginTest<br>Parameters: admin, admin</td>
+<td></td>
+<td>0</td>
+<td>com.obsqura.testscripts.LoginTest@41488b16</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageExpenseTest.toAddNewExpense()'><b>toAddNewExpense</b><br>Test class: com.obsqura.testscripts.ManageExpenseTest</td>
+<td></td>
+<td>6</td>
+<td>com.obsqura.testscripts.ManageExpenseTest@22f59fa</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageDeliveryBoyTest.addaNew_DeleiveryBoyDetails()'><b>addaNew_DeleiveryBoyDetails</b><br>Test class: com.obsqura.testscripts.ManageDeliveryBoyTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManageDeliveryBoyTest@7fd7a283</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageDeliveryBoyTest.search_DeleiveryBoyDetailsbyusing_PhoneNo()'><b>search_DeleiveryBoyDetailsbyusing_PhoneNo</b><br>Test class: com.obsqura.testscripts.ManageDeliveryBoyTest<br>Parameters: 1-645-907-0200</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManageDeliveryBoyTest@7fd7a283</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageOfferCodeTest.toCheckTheFuctionalityofMoreInfoicon()'><b>toCheckTheFuctionalityofMoreInfoicon</b><br>Test class: com.obsqura.testscripts.ManageOfferCodeTest</td>
+<td></td>
+<td>0</td>
+<td>com.obsqura.testscripts.ManageOfferCodeTest@54e041a4</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ExpenseCategoryTest.addNewExpenseCategory_and_VerifyAddingNewExpenceCategory_presentinTable()'><b>addNewExpenseCategory_and_VerifyAddingNewExpenceCategory_presentinTable</b><br>Test class: com.obsqura.testscripts.ExpenseCategoryTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ExpenseCategoryTest@5c86dbc5</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ExpenseCategoryTest.verifySearchbutton_functionality_andSearchedItemisShowing()'><b>verifySearchbutton_functionality_andSearchedItemisShowing</b><br>Test class: com.obsqura.testscripts.ExpenseCategoryTest</td>
+<td></td>
+<td>1</td>
+<td>com.obsqura.testscripts.ExpenseCategoryTest@5c86dbc5</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManagePaymentMethodsTest.updatePayLimitin_ManagePaymentMethod()'><b>updatePayLimitin_ManagePaymentMethod</b><br>Test class: com.obsqura.testscripts.ManagePaymentMethodsTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManagePaymentMethodsTest@79defdc</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManagePaymentMethodsTest.updateBothTitleandPayLimitin_ManagePaymentMethod()'><b>updateBothTitleandPayLimitin_ManagePaymentMethod</b><br>Test class: com.obsqura.testscripts.ManagePaymentMethodsTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManagePaymentMethodsTest@79defdc</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageCategorySubcategoryTest.AddingnewSubCategoryin_SubCategorypage()'><b>AddingnewSubCategoryin_SubCategorypage</b><br>Test class: com.obsqura.testscripts.ManageCategorySubcategoryTest</td>
+<td></td>
+<td>5</td>
+<td>com.obsqura.testscripts.ManageCategorySubcategoryTest@7ac296f6</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageDeliveryBoyTest.search_DeleiveryBoyDetailsbyusing_Name()'><b>search_DeleiveryBoyDetailsbyusing_Name</b><br>Test class: com.obsqura.testscripts.ManageDeliveryBoyTest<br>Parameters: Dillan</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManageDeliveryBoyTest@7fd7a283</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageLocationTest.toAddNewLocationtothe_ManageLocationPaged()'><b>toAddNewLocationtothe_ManageLocationPaged</b><br>Test class: com.obsqura.testscripts.ManageLocationTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManageLocationTest@4b86805d</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageExpenseTest.verifyExpenseDetailsTable_Headings()'><b>verifyExpenseDetailsTable_Headings</b><br>Test class: com.obsqura.testscripts.ManageExpenseTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManageExpenseTest@22f59fa</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ExpenseCategoryTest.VerifycolorofNew_Search_Resetbutton()'><b>VerifycolorofNew_Search_Resetbutton</b><br>Test class: com.obsqura.testscripts.ExpenseCategoryTest<br>Parameters: rgba(220, 53, 69, 1), rgba(0, 123, 255, 1), rgba(255, 193, 7, 1)</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ExpenseCategoryTest@5c86dbc5</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManagePaymentMethodsTest.updateTitlein_ManagePaymentMethod()'><b>updateTitlein_ManagePaymentMethod</b><br>Test class: com.obsqura.testscripts.ManagePaymentMethodsTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManagePaymentMethodsTest@79defdc</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageLocationTest.togetthelistofloactionbySearchingwithCountryandStateinthe_ManageLocationPaged()'><b>togetthelistofloactionbySearchingwithCountryandStateinthe_ManageLocationPaged</b><br>Test class: com.obsqura.testscripts.ManageLocationTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManageLocationTest@4b86805d</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageCategorySubcategoryTest.toSearchSubCategory_whileclickonSearchButton()'><b>toSearchSubCategory_whileclickonSearchButton</b><br>Test class: com.obsqura.testscripts.ManageCategorySubcategoryTest<br>Parameters: Peaches, 176</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManageCategorySubcategoryTest@7ac296f6</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManagePaymentMethodsTest.tocheckAlertMessageisShowingWhileupdateBothTitleandPayLimitin_ManagePaymentMethod()'><b>tocheckAlertMessageisShowingWhileupdateBothTitleandPayLimitin_ManagePaymentMethod</b><br>Test class: com.obsqura.testscripts.ManagePaymentMethodsTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManagePaymentMethodsTest@79defdc</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageSliderTest.new_ListSliders()'><b>new_ListSliders</b><br>Test class: com.obsqura.testscripts.ManageSliderTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManageSliderTest@18317edc</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManagePagesTest.toDeletePages()'><b>toDeletePages</b><br>Test class: com.obsqura.testscripts.ManagePagesTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManagePagesTest@2c78324b</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageNewsTest.toAddNewstoManage_NewsPage()'><b>toAddNewstoManage_NewsPage</b><br>Test class: com.obsqura.testscripts.ManageNewsTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManageNewsTest@16612a51</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageCategorySubcategoryTest.verifythecategoryinNew_SubcategoryPageAndSearchCategoryPageis_Same()'><b>verifythecategoryinNew_SubcategoryPageAndSearchCategoryPageis_Same</b><br>Test class: com.obsqura.testscripts.ManageCategorySubcategoryTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManageCategorySubcategoryTest@7ac296f6</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageDeliveryBoyTest.search_DeleiveryBoyDetailsbyusing_Email()'><b>search_DeleiveryBoyDetailsbyusing_Email</b><br>Test class: com.obsqura.testscripts.ManageDeliveryBoyTest<br>Parameters: bernetta.oberbrunner@yahoo.com</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.ManageDeliveryBoyTest@7fd7a283</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageFooterTextTest.update_FooterText()'><b>update_FooterText</b><br>Test class: com.obsqura.testscripts.ManageFooterTextTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManageFooterTextTest@78fa769e</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.PushNotificationTest.Verify_resetButtonFunctionality()'><b>Verify_resetButtonFunctionality</b><br>Test class: com.obsqura.testscripts.PushNotificationTest</td>
+<td></td>
+<td>2</td>
+<td>com.obsqura.testscripts.PushNotificationTest@4e0ae11f</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageCategoryCategoryTest.AddingnewCategoryin_Categorypage()'><b>AddingnewCategoryin_Categorypage</b><br>Test class: com.obsqura.testscripts.ManageCategoryCategoryTest<br>Parameters: 176</td>
+<td></td>
+<td>5</td>
+<td>com.obsqura.testscripts.ManageCategoryCategoryTest@a8ef162</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageCategoryCategoryTest.verifythenewCategorywillCreate_withoutManadotoryfield_Categoryin_Categorypage()'><b>verifythenewCategorywillCreate_withoutManadotoryfield_Categoryin_Categorypage</b><br>Test class: com.obsqura.testscripts.ManageCategoryCategoryTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.ManageCategoryCategoryTest@a8ef162</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.VerifyLogonameTest.verifyLogo()'><b>verifyLogo</b><br>Test class: com.obsqura.testscripts.VerifyLogonameTest<br>Parameters: 7rmart supermarket</td>
+<td></td>
+<td>0</td>
+<td>com.obsqura.testscripts.VerifyLogonameTest@238d68ff</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.MobileSliderTest.tocreatea_newMobileSlider()'><b>tocreatea_newMobileSlider</b><br>Test class: com.obsqura.testscripts.MobileSliderTest</td>
+<td></td>
+<td>3</td>
+<td>com.obsqura.testscripts.MobileSliderTest@5852c06f</td></tr>
+<tr>
+<td title='com.obsqura.testscripts.ManageOfferCodeTest.toSearchOfferCodein_ManageOfferCodePage()'><b>toSearchOfferCodein_ManageOfferCodePage</b><br>Test class: com.obsqura.testscripts.ManageOfferCodeTest<br>Parameters: 1697</td>
+<td></td>
+<td>1</td>
+<td>com.obsqura.testscripts.ManageOfferCodeTest@54e041a4</td></tr>
+</table><p>
+</body>
+</html>
