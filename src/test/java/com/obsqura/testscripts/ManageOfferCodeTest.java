@@ -2,64 +2,59 @@ package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.ManageOfferCodePage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
+
 
 public class ManageOfferCodeTest extends Base {
 	LoginPage loginpage;
 	ManageOfferCodePage manageoffercodepage;
 
 	@Test(retryAnalyzer = Retry.class)
-	public void toCheckTheFuctionalityofMoreInfoicon() throws IOException {
+	public void VerifyTheUserCanAbletoNavigateTheCorrespondingpageManageGiftcardVoucherPageWhileClickOnMoreInfoIcon() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		manageoffercodepage = new ManageOfferCodePage(driver);
-		manageoffercodepage.toClickMoreinfoForManageofferCode();
-		String actual = manageoffercodepage.toCheckUniqueElementToVerifytheNavigatedpage();
-		String expected = ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "ManageOfferCode");
+		manageoffercodepage.clickMoreinfoForManageofferCode();
+		String actual = manageoffercodepage.checkUniqueElementToVerifytheNavigatedpage();
+		String expected = ExcelUtility.getString(1, 0, "ManageOfferCode");
 		assertEquals(actual, expected, "Manage Gift card and voucher page is not displayed");
 	}
 
 	@Test(retryAnalyzer = Retry.class)
-	public void toaddOfferCodein_ManageOfferCodePage() throws IOException {
+	public void verifyTheUserCanAbletoviewAlertMessageafterSuccesfullAddingOfNewOfferCodeinManageOfferCodePageWhileClickOnSaveButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		manageoffercodepage = new ManageOfferCodePage(driver);
-		manageoffercodepage.toClickMoreinfoForManageofferCode().toClickNewButtoninManageOffercodePage();
-		manageoffercodepage.toEnterOffercode();
-		manageoffercodepage.toSelectRadioButtoninManageOffercodePage().toEnterPercentage().toEnterAmount()
-				.toEnterDescription().toUploadFile().toClickSaveButtoninManageOffercodePage();
-		assertTrue(manageoffercodepage.toDisplayAlertElement() == true,
-				"Alert message Odder Code created succesfully is not displayed");
+		manageoffercodepage.clickMoreinfoForManageofferCode().clickNewButtoninManageOffercodePage();
+		manageoffercodepage.enterOffercode();
+		manageoffercodepage.selectRadioButtoninManageOffercodePage().enterPercentage().enterAmount().enterDescription()
+				.uploadFile().clickSaveButtoninManageOffercodePage();
+		assertTrue(manageoffercodepage.isAlertElementisDisplayed(),"Alert message Offer Code created succesfully is not displayed");
 	}
 
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "offercode" })
-	public void toSearchOfferCodein_ManageOfferCodePage(String offercode) throws IOException {
+	public void ValidateTheSearchOfferCodeIsDispalyingInListOfferCodeTableWhileClickOnSearchButton(String offercode) {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		manageoffercodepage = new ManageOfferCodePage(driver);
-		manageoffercodepage.toClickMoreinfoForManageofferCode().toClickSearchButtoninManageOffercodePage();
-		manageoffercodepage.toEnterOffercodeForSearch(offercode);
-		manageoffercodepage.toClicSearchButtonForSearchinManageOffercodePage();
-		String actual = manageoffercodepage.togetResultTabledata();
+		manageoffercodepage.clickMoreinfoForManageofferCode().clickSearchButtoninManageOffercodePage();
+		manageoffercodepage.enterOffercodeForSearch(offercode);
+		manageoffercodepage.clicSearchButtonForSearchinManageOffercodePage();
+		String actual = manageoffercodepage.getResultTabledata();
 		String expected = manageoffercodepage.gettextOffercode();
-		assertTrue(actual.contains(expected) == true, "The entered category is not in table");
+		assertTrue(actual.contains(expected), "The entered category is not in table");
 
 	}
 

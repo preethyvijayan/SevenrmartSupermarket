@@ -2,6 +2,7 @@ E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\ExtentReportU
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\ExcelUtility.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\ManageCategoryCategoryPage.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\ManageLocationPage.java
+E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\RandomDataUtility.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\ManageOfferCodePage.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\ExpenseCategoryPage.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\ManageFooterTextPage.java
@@ -18,8 +19,7 @@ E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\ScreenShotUti
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\ManagePaymentMethodsPage.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\VerifyLogonamePage.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\constants\Constants.java
-E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\FakeUtility.java
-E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\TestDataUtility.java
+E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\GeneralUtility.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\WaitUtility.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\com\obsqura\pages\ManageSliderPage.java
 E:\eclipse-workspace\SevenrmartSupermarket\src\main\java\Utilities\PageUtility.java

@@ -1,17 +1,13 @@
 package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.ManageNewsPage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
+
 
 public class ManageNewsTest extends Base {
 	LoginPage loginpage;
@@ -19,18 +15,18 @@ public class ManageNewsTest extends Base {
 	ManageNewsPage managenewspage;
 
 	@Test(retryAnalyzer = Retry.class)
-	public void toAddNewstoManage_NewsPage() throws IOException {
+	public void VerifyWhetherTheUserCanabletoViewAlertMessageAfterSusccesfullAddingofNewstoManageNewsPagewhileClickOnSaveButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(9, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(9, 0, "Categories"));
 		managenewspage = new ManageNewsPage(driver);
-		managenewspage.toClickManageNewsPageCategory();
-		managenewspage.toClickNewButtonElement().toEnterTextarea().toClickSaveButtonElement();
-		assertTrue(managenewspage.toCheckAlertinManageNewspage() == true, "News is not created succesfully");
+		managenewspage.clickManageNewsPageCategory();
+		managenewspage.clickNewButtonElement().enterTextarea().clickSaveButtonElement();
+		assertTrue(managenewspage.isCheckAlertisDisplayedinManageNewspage(), "News is not created succesfully");
+
 	}
 
 }

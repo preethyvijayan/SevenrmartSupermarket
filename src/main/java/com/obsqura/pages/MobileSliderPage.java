@@ -2,17 +2,19 @@ package com.obsqura.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.FakeUtility;
+import Utilities.GeneralUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class MobileSliderPage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public MobileSliderPage(WebDriver driver) {
 		this.driver = driver;
@@ -29,41 +31,42 @@ public class MobileSliderPage {
 	WebElement saveButtonElement;
 	@FindBy(xpath = "//button[@data-dismiss='alert']//ancestor::div[contains(@class,'alert-dismissible')]")
 	WebElement alertElement;
-	@FindBy(xpath = "//a[contains(@href,'edit?edit=504&page_ad=1')]")
-	WebElement clickStatusElement;
-	@FindBy(xpath = "//span[contains(@class,'fa-trash-alt')]")
-	WebElement deleteButtonElement;
 
 	public void toClickNewButtonAddingNewSlider() {
-		WaitUtility.waitForElementClickable(driver, newButtonElement);
-		PageUtility.isElementDisplayed(newButtonElement);
-		PageUtility.clickOnElement(newButtonElement);
+		waitutility.waitForElementClickable(driver, newButtonElement);
+		pageutility.isElementDisplayed(newButtonElement);
+		newButtonElement.click();
 
 	}
 
 	public void toSelectCategory(String value) {
-		WaitUtility.waitForElementClickable(driver, categoryElement);
-		PageUtility.clickOnElement(categoryElement);
-		PageUtility.selectDropdownbyText(categoryElement, value);
+		waitutility.waitForElementClickable(driver, categoryElement);
+		categoryElement.click();
+		pageutility.selectDropdownbyText(categoryElement, value);
 	}
 
 	public MobileSliderPage toUploadFile() {
-		UploadFileElement.sendKeys("E://uploadfile//managetestFile.png");
+		try {
+			pageutility.sendKey(UploadFileElement, GeneralUtility.IMAGEFILEFORMANAGEEXPENSEPAGE);
+
+		} catch (Exception e) {
+			System.out.println("FileNotFoundException");
+		}
 		return this;
 
 	}
 
 	public MobileSliderPage toClickSaveButtonforAddingNewSlider() {
-		WaitUtility.waitForElementClickable(driver, saveButtonElement);
-		PageUtility.isElementDisplayed(saveButtonElement);
-		PageUtility.clickOnElement(saveButtonElement);
+		waitutility.waitForElementClickable(driver, saveButtonElement);
+		pageutility.isElementDisplayed(saveButtonElement);
+		saveButtonElement.click();
 		return this;
 
 	}
 
 	public boolean toDisplayAlertElement() {
-		WaitUtility.waitForElementClickable(driver, alertElement);
-		return PageUtility.isElementDisplayed(alertElement);
+		waitutility.waitForElementClickable(driver, alertElement);
+		return pageutility.isElementDisplayed(alertElement);
 	}
 
 }

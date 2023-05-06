@@ -10,8 +10,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
-	public static void clickOnElement(WebElement element) {
-		element.click();
+
+	public void clearElement(WebElement element) {
+		element.clear();
 	}
 
 	public boolean isDisplay(WebElement element) {
@@ -19,92 +20,92 @@ public class PageUtility {
 		return status;
 	}
 
-	public static WebElement enterText(WebElement element, String value) {
-		element.sendKeys(value);
-		return element;
-	}
-
 	public void sendKey(WebElement element, String s) {
 		element.sendKeys(s);
 	}
 
-	public static String getElementText(WebElement element) {
+	public String getElementText(WebElement element) {
 		return element.getText();
 	}
 
-	public static void clickAndHoldOnElement(WebElement element, WebDriver driver) {
+	public void clickAndHoldOnElement(WebElement element, WebDriver driver) {
 		Actions actions = new Actions(driver);
 		actions.clickAndHold(element).build().perform();
 	}
 
-	public static void actionClick(WebElement element, WebDriver driver) {
+	public void actionClick(WebElement element, WebDriver driver) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).click().perform();
 	}
 
-	public static void mouseHover(WebElement element, WebDriver driver) {
+	public void mouseHover(WebElement element, WebDriver driver) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).build().perform();
 	}
 
-	public static void doubleClick(WebElement element, WebDriver driver) {
+	public void doubleClick(WebElement element, WebDriver driver) {
 		Actions actions = new Actions(driver);
 		actions.doubleClick(element).perform();
 	}
 
-	public static void rightClick(WebElement element, WebDriver driver) {
+	public void rightClick(WebElement element, WebDriver driver) {
 		Actions actions = new Actions(driver);
 		actions.contextClick(element).perform();
 	}
 
-	public static void dragAnddrop(WebElement dragableItem, WebElement dropItem, WebDriver driver) {
+	public void dragAnddrop(WebElement dragableItem, WebElement dropItem, WebDriver driver) {
 		Actions actions = new Actions(driver);
 		actions.clickAndHold(dragableItem).moveToElement(dropItem).release(dropItem).build().perform();
 	}
 
-	public static void selectDropdownbyText(WebElement element, String text) {
+	public void selectDropdownbyText(WebElement element, String text) {
 		Select select = new Select(element);
 		select.selectByVisibleText(text);
 	}
 
-	public static void selectDropdownbyValue(WebElement element, String text) {
+	public void selectDropdownbyValue(WebElement element, String text) {
 		Select select = new Select(element);
 		select.selectByValue(text);
 	}
 
-	public static void selectDropdownbyIndex(WebElement element, int index) {
+	public void selectDropdownbyIndex(WebElement element, int index) {
 		Select select = new Select(element);
 		select.selectByIndex(index);
 	}
 
-	public static WebElement enterIntValue(WebElement element, CharSequence[] value) {
+	public WebElement enterIntValue(WebElement element, CharSequence[] value) {
 		element.sendKeys(value);
 		return element;
 	}
 
-	public static Boolean isElementDisplayed(WebElement element) {
+	public Boolean isElementDisplayed(WebElement element) {
 		return element.isDisplayed();
 	}
 
-	public static void ScrollBy(WebDriver driver) {
+	public void ScrollBy(WebDriver driver) {
 		JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 		Js1.executeScript("window.scrollBy(0,2500)");
 	}
 
-	public static void stopPageRefresh(WebDriver driver) {
+	public void stopPageRefresh(WebDriver driver) {
 		JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 		Js1.executeScript("window.stop();");
 	}
 
-	public String getToolTip(WebElement element) {
-		return element.getAttribute("title");
+	public void toClickButton(WebDriver driver, WebElement element) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].click()", element);
 	}
 
-	public static String getbackgroundcolorofButton(WebElement element) {
+	public String getToolTip(WebElement element) {
+		return element.getAttribute("value");
+	}
+
+	public String getbackgroundcolorofButton(WebElement element) {
 		return element.getCssValue("background-color");
 	}
 
-	public static void getClickElement(WebElement element) {
+	public void getClickElement(WebElement element) {
 		element.click();
 	}
 
@@ -202,11 +203,11 @@ public class PageUtility {
 		}
 	}
 
-	public static boolean elementIsSelected(WebElement element) {
+	public boolean elementIsSelected(WebElement element) {
 		return element.isSelected();
 	}
 
-	public static boolean elementIsEnabled(WebElement element) {
+	public boolean elementIsEnabled(WebElement element) {
 		return element.isEnabled();
 	}
 }

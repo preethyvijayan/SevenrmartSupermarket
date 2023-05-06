@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtility;
-import Utilities.WaitUtility;
 
 public class LoginPage {
 	public WebDriver driver;
+	PageUtility pageutility = new PageUtility();
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -22,39 +22,37 @@ public class LoginPage {
 	WebElement passwordElement;
 	@FindBy(xpath = "//button[text()='Sign In']")
 	WebElement signinButtonElement;
-	@FindBy(xpath = "//label[@for='remember']")
-	WebElement remembermeElement;
 	@FindBy(xpath = "//div[@class='wrapper']")
 	WebElement uniqueElement;
 
-	public boolean loginUname() {
-		return PageUtility.isElementDisplayed(usernameElement);
+	public boolean isLoginUnameIsDisplayed() {
+		return pageutility.isElementDisplayed(usernameElement);
 	}
 
-	public void loginUnameEnterText(String uname) {
+	public void enterLoginUname(String uname) {
 
-		PageUtility.enterText(usernameElement, uname);
+		usernameElement.sendKeys(uname);
 	}
 
-	public boolean loginPass() {
-		return PageUtility.isElementDisplayed(passwordElement);
+	public boolean isLoginPassIsDisplayed() {
+		return pageutility.isElementDisplayed(passwordElement);
 	}
 
-	public void loginPassenterText(String pass) {
-		PageUtility.enterText(passwordElement, pass);
+	public void enterLoginPassword(String pass) {
+		passwordElement.sendKeys(pass);
 	}
 
-	public boolean Loginbtn() {
-		return PageUtility.isElementDisplayed(signinButtonElement);
+	public boolean isLoginbtnisDisplayed() {
+		return pageutility.isElementDisplayed(signinButtonElement);
 	}
 
-	public void toClickLoginbtn() {
-		PageUtility.clickOnElement(signinButtonElement);
+	public void clickLoginbtn() {
+		signinButtonElement.click();
 
 	}
 
 	public boolean uniqueElement() {
-		return PageUtility.isElementDisplayed(uniqueElement);
+		return pageutility.isElementDisplayed(uniqueElement);
 	}
 
 }

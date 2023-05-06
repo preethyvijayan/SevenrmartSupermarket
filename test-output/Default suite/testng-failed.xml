@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsqura.testscripts.ManagePagesTest">
+      <class name="com.obsqura.testscripts.ManageDeliveryBoyTest">
         <methods>
           <include name="initilizeBrowser"/>
-          <include name="toAddNewPages_andVerifytheNewly_addedPages_isIncludedIn_ListPages"/>
+          <include name="verifyUserCanAbeltoViewtheNewlyAddedDeleiveryBoyDetailsinListOfDeliveryBoyTbleWhileClickOnSaveButton"/>
           <include name="browserQuit"/>
         </methods>
-      </class> <!-- com.obsqura.testscripts.ManagePagesTest -->
+      </class> <!-- com.obsqura.testscripts.ManageDeliveryBoyTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

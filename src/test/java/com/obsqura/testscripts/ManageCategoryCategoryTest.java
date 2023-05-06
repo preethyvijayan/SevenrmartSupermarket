@@ -1,18 +1,13 @@
 package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.ManageCategoryCategoryPage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
+
 
 public class ManageCategoryCategoryTest extends Base {
 	LoginPage loginpage;
@@ -20,42 +15,33 @@ public class ManageCategoryCategoryTest extends Base {
 	ManageCategoryCategoryPage managecategorycategorypage;
 
 	@Test(retryAnalyzer = Retry.class)
-	@Parameters({ "category" })
-	public void AddingnewCategoryin_Categorypage(String category) throws IOException {
+	public void VerifyUserCanAbletoVisibleTheAlertMessageAftrerSuccesfullAddingofnewCategoryinCategorypageWhileClickOnSaveButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(15, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(15, 0, "Categories"));
 		managecategorycategorypage = new ManageCategoryCategoryPage(driver);
-		managecategorycategorypage.toClickcategoryOptionin_ManageCategory()
-				.toClickNewButonforaddingNewCategoryin_ManageCategory()
-				.toEnterCategoryforaddingNewCategoryin_ManageCategory(category)
-				.toEnterGroupforaddingNewCategoryin_ManageCategory().toUploadFile()
-				.toClicktopMenuRadiobuttonElementisSelected().toClicksideMenuRadiobuttonElementisSelected()
-				.toClickSaveButtonin_ManageCategory();
-		assertTrue(managecategorycategorypage.toCheckAlert() == true,
-				"Alert information Message Category created succesfully is not displayed");
+		managecategorycategorypage.clickcategoryOptionin_ManageCategory().clickNewButonforaddingNewCategoryin_ManageCategory();
+		managecategorycategorypage.enterCategoryforaddingNewCategoryin_ManageCategory();
+		managecategorycategorypage.enterGroupforaddingNewCategoryin_ManageCategory().uploadFile().clicktopMenuRadiobuttonElement().clicksideMenuRadiobuttonElement().clickSaveButtonin_ManageCategory();
+		assertTrue(managecategorycategorypage.isAlertDisplayed(),"Alert information Message Category created succesfully is not displayed");
 
 	}
 
 	@Test(retryAnalyzer = Retry.class)
-	public void verifythenewCategorywillCreate_withoutManadotoryfield_Categoryin_Categorypage() throws IOException {
+	public void verifytheUserCanAbleToseetheManadatoryMessagewhileaddingnewCategorywithoutEnteringTheManadotoryfieldCategoryWhileClcikOnSaveButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(15, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(15, 0, "Categories"));
 		managecategorycategorypage = new ManageCategoryCategoryPage(driver);
-		managecategorycategorypage.toClickcategoryOptionin_ManageCategory()
-				.toClickNewButonforaddingNewCategoryin_ManageCategory()
-				.toEnterGroupforaddingNewCategoryin_ManageCategory().toUploadFile()
-				.toClicktopMenuRadiobuttonElementisSelected().toClicksideMenuRadiobuttonElementisSelected()
-				.toClickSaveButtonin_ManageCategory();
+		managecategorycategorypage.clickcategoryOptionin_ManageCategory().clickNewButonforaddingNewCategoryin_ManageCategory()
+		.enterGroupforaddingNewCategoryin_ManageCategory().uploadFile().clicktopMenuRadiobuttonElement().clicksideMenuRadiobuttonElement()
+		.clickSaveButtonin_ManageCategory();
 		String actual = managecategorycategorypage.gettextCategory();
 		assertTrue(actual == null, "category field is not blank");
 	}

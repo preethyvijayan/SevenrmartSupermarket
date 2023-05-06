@@ -1,18 +1,13 @@
 package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
 import org.testng.annotations.Test;
-
-import com.beust.jcommander.Parameters;
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.MobileSliderPage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
+
 
 public class MobileSliderTest extends Base {
 	LoginPage loginpage;
@@ -20,20 +15,19 @@ public class MobileSliderTest extends Base {
 	MobileSliderPage mobilesliderpage;
 
 	@Test(retryAnalyzer = Retry.class)
-	public void tocreatea_newMobileSlider() throws IOException {
+	public void validateTheUserCanAbleToViewTheAlertMessageAfterCreatingTheNewMobileSliderWhileClickOnSaveButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(13, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(13, 0, "Categories"));
 		mobilesliderpage = new MobileSliderPage(driver);
 		mobilesliderpage.toClickNewButtonAddingNewSlider();
-		mobilesliderpage.toSelectCategory(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "MobileSlider"));
+		mobilesliderpage.toSelectCategory(ExcelUtility.getString(1, 0, "ManageCategorySubcategory"));
 		mobilesliderpage.toUploadFile().toClickSaveButtonforAddingNewSlider();
-		assertTrue(mobilesliderpage.toDisplayAlertElement() == true,
-				"Mobile slider created succesfully alert is not showing");
+		assertTrue(mobilesliderpage.toDisplayAlertElement(), "Mobile slider created succesfully alert is not showing");
+
 	}
 
 }

@@ -2,28 +2,31 @@ package com.obsqura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.FakeUtility;
+import Utilities.GeneralUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ManageOfferCodePage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManageOfferCodePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By tableData = By.xpath("//div[@class='card-header']//following::td");
+	@FindAll({ @FindBy(xpath = "//div[@class='card-header']//following::td") })
+	public List<WebElement> tableData;
 	@FindBy(xpath = "//a[contains(@href,'list-offercode')]")
 	WebElement moreInfoElement;
 	@FindBy(xpath = "//h1[text()='List Offercodes']")
@@ -53,109 +56,110 @@ public class ManageOfferCodePage {
 	@FindBy(xpath = "//button[@name='Search']")
 	WebElement searchButtonForSearchElement;
 
-	public ManageOfferCodePage toClickMoreinfoForManageofferCode() {
-		WaitUtility.waitForElementClickable(driver, moreInfoElement);
-		PageUtility.isElementDisplayed(moreInfoElement);
-		PageUtility.clickOnElement(moreInfoElement);
+	public ManageOfferCodePage clickMoreinfoForManageofferCode() {
+		waitutility.waitForElementClickable(driver, moreInfoElement);
+		pageutility.isElementDisplayed(moreInfoElement);
+		moreInfoElement.click();
 		return this;
 	}
 
-	public String toCheckUniqueElementToVerifytheNavigatedpage() {
-		return uniqueElement.getText();
+	public String checkUniqueElementToVerifytheNavigatedpage() {
+		return pageutility.getElementText(uniqueElement);
 	}
 
-	public ManageOfferCodePage toClickNewButtoninManageOffercodePage() {
-		WaitUtility.waitForElementClickable(driver, newButtonElement);
-		PageUtility.isElementDisplayed(newButtonElement);
-		PageUtility.clickOnElement(newButtonElement);
+	public ManageOfferCodePage clickNewButtoninManageOffercodePage() {
+		waitutility.waitForElementClickable(driver, newButtonElement);
+		pageutility.isElementDisplayed(newButtonElement);
+		newButtonElement.click();
 		return this;
 	}
 
-	public String toEnterOffercode() {
-		PageUtility.isElementDisplayed(offerCodeElement);
-		PageUtility.enterText(offerCodeElement, fakeutility.togetStringnumber(4));
+	public String enterOffercode() {
+		pageutility.isElementDisplayed(offerCodeElement);
+		offerCodeElement.sendKeys(fakeutility.togetStringnumber(4));
 		return offerCodeElement.getAttribute("value");
 	}
 
-	public ManageOfferCodePage toSelectRadioButtoninManageOffercodePage() {
-		WaitUtility.waitForElementClickable(driver, yesRadioButtonElement);
-		PageUtility.isElementDisplayed(yesRadioButtonElement);
-		PageUtility.clickOnElement(yesRadioButtonElement);
+	public ManageOfferCodePage selectRadioButtoninManageOffercodePage() {
+		waitutility.waitForElementClickable(driver, yesRadioButtonElement);
+		pageutility.isElementDisplayed(yesRadioButtonElement);
+		yesRadioButtonElement.click();
 		return this;
 	}
 
-	public ManageOfferCodePage toEnterPercentage() {
-		PageUtility.isElementDisplayed(percentageElement);
-		PageUtility.enterText(percentageElement, fakeutility.togetStringnumber(2));
+	public ManageOfferCodePage enterPercentage() {
+		pageutility.isElementDisplayed(percentageElement);
+		percentageElement.sendKeys(fakeutility.togetStringnumber(2));
 		return this;
 	}
 
-	public ManageOfferCodePage toEnterAmount() {
-		PageUtility.isElementDisplayed(amountElement);
-		PageUtility.enterText(amountElement, fakeutility.togetStringnumber(4));
+	public ManageOfferCodePage enterAmount() {
+		pageutility.isElementDisplayed(amountElement);
+		amountElement.sendKeys(fakeutility.togetStringnumber(4));
 		return this;
 	}
 
-	public ManageOfferCodePage toEnterDescription() {
-		PageUtility.isElementDisplayed(decsriptionElement);
-		PageUtility.enterText(decsriptionElement, fakeutility.togetanimalname());
+	public ManageOfferCodePage enterDescription() {
+		pageutility.isElementDisplayed(decsriptionElement);
+		decsriptionElement.sendKeys(fakeutility.togetanimalname());
 		return this;
 	}
 
-	public ManageOfferCodePage toUploadFile() {
-		fileUploadElement.sendKeys("E://uploadfile//managetestFile.png");
-		return this;
+	public ManageOfferCodePage uploadFile() {
+		try {
+			pageutility.sendKey(fileUploadElement, GeneralUtility.IMAGEFILEFORMANAGEOFFERPAGE);
 
-	}
-
-	public ManageOfferCodePage toClickSaveButtoninManageOffercodePage() {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].click()", saveButtonElement);
+		} catch (Exception e) {
+			System.out.println("FileNotFoundException");
+		}
 		return this;
 
 	}
 
-	public boolean toDisplayAlertElement() {
-		WaitUtility.waitForElementClickable(driver, alertElement);
-		return PageUtility.isElementDisplayed(alertElement);
-	}
-
-	public void toClickSearchButtoninManageOffercodePage() {
-		WaitUtility.waitForElementClickable(driver, searchButtonElement);
-		PageUtility.isElementDisplayed(searchButtonElement);
-		PageUtility.clickOnElement(searchButtonElement);
-	}
-
-	public void toEnterOffercodeForSearch(String value) {
-		PageUtility.isElementDisplayed(offerCodeForSearchElement);
-		PageUtility.enterText(offerCodeForSearchElement, value);
+	public ManageOfferCodePage clickSaveButtoninManageOffercodePage() {
+		pageutility.toClickButton(driver, saveButtonElement);
+		return this;
 
 	}
 
-	public void toClicSearchButtonForSearchinManageOffercodePage() {
-		WaitUtility.waitForElementClickable(driver, searchButtonForSearchElement);
-		PageUtility.isElementDisplayed(searchButtonForSearchElement);
-		PageUtility.clickOnElement(searchButtonForSearchElement);
+	public boolean isAlertElementisDisplayed() {
+		waitutility.waitForElementClickable(driver, alertElement);
+		return pageutility.isElementDisplayed(alertElement);
 	}
 
-	public String togetResultTabledata() {
+	public void clickSearchButtoninManageOffercodePage() {
+		waitutility.waitForElementClickable(driver, searchButtonElement);
+		pageutility.isElementDisplayed(searchButtonElement);
+		searchButtonElement.click();
+	}
+
+	public void enterOffercodeForSearch(String value) {
+		pageutility.isElementDisplayed(offerCodeForSearchElement);
+		offerCodeForSearchElement.sendKeys(value);
+
+	}
+
+	public void clicSearchButtonForSearchinManageOffercodePage() {
+		waitutility.waitForElementClickable(driver, searchButtonForSearchElement);
+		pageutility.isElementDisplayed(searchButtonForSearchElement);
+		searchButtonForSearchElement.click();
+	}
+
+	public String getResultTabledata() {
 
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(tableData);
-
-		for (WebElement data : table) {
+		for (WebElement data : tableData) {
 			String actual = data.getText();
 
 			al.add(actual);
 
 		}
-		System.out.println(al.toString());
 		return al.toString();
 
 	}
 
 	public String gettextOffercode() {
-		return offerCodeForSearchElement.getAttribute("value");
+		return pageutility.getToolTip(offerCodeForSearchElement);
 	}
 
 }

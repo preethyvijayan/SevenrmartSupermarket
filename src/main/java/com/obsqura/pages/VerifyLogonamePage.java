@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Utilities.PageUtility;
 
 public class VerifyLogonamePage {
 	public WebDriver driver;
+	PageUtility pageutility = new PageUtility();
 
 	public VerifyLogonamePage(WebDriver driver) {
 		this.driver = driver;
@@ -19,8 +19,8 @@ public class VerifyLogonamePage {
 	WebElement logonameElement;
 
 	public String getTextLogoname() {
-		PageUtility.isElementDisplayed(logonameElement);
-		String s = logonameElement.getText();
-		return s;
+		pageutility.isElementDisplayed(logonameElement);
+		return pageutility.getElementText(logonameElement);
+
 	}
 }

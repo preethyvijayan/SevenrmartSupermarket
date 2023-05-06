@@ -2,30 +2,32 @@ package com.obsqura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.FakeUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ManageDeliveryBoyPage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManageDeliveryBoyPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By tableElement = By.xpath("//div[@class='card']//child::tr");
-	By resulttableElement = By.xpath("//div[@class='card']//child::td");
+	@FindAll({ @FindBy(xpath = "//div[@class='card']//child::tr") })
+	public List<WebElement> tableElement;
+	@FindAll({ @FindBy(xpath = "//div[@class='card']//child::td") })
+	public List<WebElement> resulttableElement;
 
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
 	WebElement newButtonElement;
@@ -43,7 +45,6 @@ public class ManageDeliveryBoyPage {
 	WebElement passwordElement;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement savebuttonElement;
-
 	@FindBy(xpath = "//a[@onclick='click_button(2)']")
 	WebElement seacrhButtonElement;
 	@FindBy(css = "input#un")
@@ -55,147 +56,138 @@ public class ManageDeliveryBoyPage {
 	@FindBy(css = "input#ph")
 	WebElement phoneNoforSearchElement;
 
-	public ManageDeliveryBoyPage toClickSearchButtonin_ManageDeliveryboy() {
-		WaitUtility.waitForElementClickable(driver, seacrhButtonElement);
-		PageUtility.isElementDisplayed(seacrhButtonElement);
-		PageUtility.clickOnElement(seacrhButtonElement);
+	public ManageDeliveryBoyPage clickSearchButtonin_ManageDeliveryboy() {
+		waitutility.waitForElementClickable(driver, seacrhButtonElement);
+		pageutility.isElementDisplayed(seacrhButtonElement);
+		seacrhButtonElement.click();
 		return this;
 
 	}
 
-	public void toEnterNameForSearch(String value) {
+	public void enterNameForSearch(String value) {
 
-		PageUtility.isElementDisplayed(nameforSearchElement);
-		PageUtility.enterText(nameforSearchElement, value);
-
-	}
-
-	public void toClickSearchButtonforSearchin_ManageDeliveryboy() {
-		WaitUtility.waitForElementClickable(driver, searchButtonforSearchElement);
-		PageUtility.isElementDisplayed(searchButtonforSearchElement);
-		PageUtility.clickOnElement(searchButtonforSearchElement);
+		pageutility.isElementDisplayed(nameforSearchElement);
+		nameforSearchElement.sendKeys(value);
 
 	}
 
-	public void toEnterEmailForSearch(String value) {
-
-		PageUtility.isElementDisplayed(emailforSearchElement);
-		PageUtility.enterText(emailforSearchElement, value);
+	public void clickSearchButtonforSearchin_ManageDeliveryboy() {
+		waitutility.waitForElementClickable(driver, searchButtonforSearchElement);
+		pageutility.isElementDisplayed(searchButtonforSearchElement);
+		searchButtonforSearchElement.click();
 
 	}
 
-	public void toEnterPhoneForSearch(String value) {
+	public void enterEmailForSearch(String value) {
 
-		PageUtility.isElementDisplayed(phoneNoforSearchElement);
-		PageUtility.enterText(phoneNoforSearchElement, value);
+		pageutility.isElementDisplayed(emailforSearchElement);
+		emailforSearchElement.sendKeys(value);
 
+	}
+
+	public void enterPhoneForSearch(String value) {
+
+		pageutility.isElementDisplayed(phoneNoforSearchElement);
+		phoneNoforSearchElement.sendKeys(value);
 	}
 
 	public String tableData() {
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(tableElement);
-
-		for (WebElement data : table) {
+		for (WebElement data : tableElement) {
 			String actual = data.getText();
 
 			al.add(actual);
 		}
-		System.out.println("TAble" + al.toString());
 		return al.toString();
 	}
 
 	public String getresultTabledata() {
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(resulttableElement);
-		for (WebElement data : table) {
+		for (WebElement data : resulttableElement) {
 			String actual = data.getText();
 			al.add(actual);
 		}
-		System.out.println("result" + al.toString());
 		return al.toString();
 	}
 
-	public ManageDeliveryBoyPage toClickNewButtonforAdding_in() {
-		WaitUtility.waitForElementClickable(driver, newButtonElement);
-		PageUtility.isElementDisplayed(newButtonElement);
-		PageUtility.clickOnElement(newButtonElement);
+	public ManageDeliveryBoyPage clickNewButtonforAdding() {
+		waitutility.waitForElementClickable(driver, newButtonElement);
+		pageutility.isElementDisplayed(newButtonElement);
+		newButtonElement.click();
 		return this;
 
 	}
 
-	public ManageDeliveryBoyPage toEnterName() {
+	public ManageDeliveryBoyPage enterName() {
 
-		PageUtility.isElementDisplayed(nameElement);
-		PageUtility.enterText(nameElement, fakeutility.togetFirstname());
+		pageutility.isElementDisplayed(nameElement);
+		nameElement.sendKeys(fakeutility.togetFirstname());
 		return this;
 
 	}
 
-	public ManageDeliveryBoyPage toEnterEmail() {
+	public void enterEmail(String value) {
 
-		PageUtility.isElementDisplayed(emailElement);
-		PageUtility.enterText(emailElement, "test123@gmail.com");
+		pageutility.isElementDisplayed(emailElement);
+		emailElement.sendKeys(value);
+
+	}
+
+	public ManageDeliveryBoyPage enterPhone() {
+
+		pageutility.isElementDisplayed(phoneElement);
+		phoneElement.sendKeys(fakeutility.togetPhoneNo());
 		return this;
 
 	}
 
-	public ManageDeliveryBoyPage toEnterPhone() {
+	public ManageDeliveryBoyPage enterAddress() {
 
-		PageUtility.isElementDisplayed(phoneElement);
-		PageUtility.enterText(phoneElement, fakeutility.togetPhoneNo());
+		pageutility.isElementDisplayed(addressElement);
+		addressElement.sendKeys(fakeutility.togetsecondaryAddress());
 		return this;
 
 	}
 
-	public ManageDeliveryBoyPage toEnterAddress() {
+	public ManageDeliveryBoyPage enterUsername() {
 
-		PageUtility.isElementDisplayed(addressElement);
-		PageUtility.enterText(addressElement, fakeutility.togetsecondaryAddress());
+		pageutility.isElementDisplayed(usernameElement);
+		usernameElement.sendKeys(fakeutility.togetNamewithMiddle());
 		return this;
 
 	}
 
-	public ManageDeliveryBoyPage toEnterUsername() {
+	public ManageDeliveryBoyPage enterPassword() {
 
-		PageUtility.isElementDisplayed(usernameElement);
-		PageUtility.enterText(usernameElement, fakeutility.togetNamewithMiddle());
-		return this;
-
-	}
-
-	public ManageDeliveryBoyPage toEnterPassword() {
-
-		PageUtility.isElementDisplayed(passwordElement);
-		PageUtility.enterText(passwordElement, fakeutility.togetpass());
+		pageutility.isElementDisplayed(passwordElement);
+		passwordElement.sendKeys(fakeutility.togetpass());
 		return this;
 	}
 
-	public ManageDeliveryBoyPage toClickSaveButtonforAddingNewDeliveryBoy() {
-
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].click()", savebuttonElement);
+	public ManageDeliveryBoyPage clickSaveButtonforAddingNewDeliveryBoy() {
+		pageutility.toClickButton(driver, savebuttonElement);
 		return this;
 
 	}
 
 	public String getTextFromUsername() {
 
-		return usernameElement.getAttribute("value");
+		return pageutility.getToolTip(usernameElement);
 	}
 
 	public String getTextFromUsernameforsearch() {
 
-		return nameforSearchElement.getAttribute("value");
+		return pageutility.getToolTip(nameforSearchElement);
 	}
 
 	public String getTextFromemailforsearch() {
 
-		return emailforSearchElement.getAttribute("value");
+		return pageutility.getToolTip(emailforSearchElement);
 	}
 
 	public String getTextFromphoneforsearch() {
 
-		return emailforSearchElement.getAttribute("value");
+		return pageutility.getToolTip(emailforSearchElement);
 	}
 
 }

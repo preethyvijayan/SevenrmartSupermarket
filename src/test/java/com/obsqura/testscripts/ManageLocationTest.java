@@ -1,17 +1,13 @@
 package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.ManageLocationPage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
+
 
 public class ManageLocationTest extends Base {
 	LoginPage loginpage;
@@ -19,36 +15,35 @@ public class ManageLocationTest extends Base {
 	ManageLocationPage managelocationpage;
 
 	@Test(retryAnalyzer = Retry.class)
-	public void toAddNewLocationtothe_ManageLocationPaged() throws IOException {
+	public void ValidateTheSuccesfullAlertMessageIsDispalyedafteraddingTheNewLocationtotheManageLocationPage() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(17, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(17, 0, "Categories"));
 		managelocationpage = new ManageLocationPage(driver);
-		managelocationpage.toClickNewButtonin_ManageLocationPage().toSelectCountryDropdown().toSelectStateDropdown()
-				.toEnterLocation().toEnterDeliveryCharges().toClickSaveButtonin_ManageLocationPage();
-		assertTrue(managelocationpage.toDisplayAlertElement() == true,
-				"Alert message Location created succesfully is not displayed");
+		managelocationpage.clickNewButtonin_ManageLocationPage().selectCountryDropdown().selectStateDropdown()
+				.enterLocation().enterDeliveryCharges().clickSaveButtonin_ManageLocationPage();
+		assertTrue(managelocationpage.isAlertElementisDisplayed(),"Alert message Location created succesfully is not displayed");
 
 	}
 
 	@Test(retryAnalyzer = Retry.class)
-	public void togetthelistofloactionbySearchingwithCountryandStateinthe_ManageLocationPaged() throws IOException {
+	public void verifyUserCanAbletoViewThethelistofloactionbyCorrespondingSearchwithCountryandStatewhileClickonSearchButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(17, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(17, 0, "Categories"));
 		managelocationpage = new ManageLocationPage(driver);
-		managelocationpage.toClickSearchButtonin_ManageLocationPage().toSelectCountryDropdown().toSelectStateDropdown()
-				.toClickSearchForSearchButtonin_ManageLocationPage();
-		assertTrue(managelocationpage.togetResultTabledata().contains(managelocationpage.gettextState()) == true,
-				"The location list is not displayed as perthe given data");
+		managelocationpage.clickSearchButtonin_ManageLocationPage();
+		managelocationpage.selectCountryDropdownforSearch(ExcelUtility.getString(1, 0, "ManageLocation"));
+		managelocationpage.selectStateDropdownforSearch(ExcelUtility.getString(2, 0, "ManageLocation"));
+		managelocationpage.enterLocationforSearch(ExcelUtility.getString(3, 0, "ManageLocation"));
+		managelocationpage.clickSearchForSearchButtonin_ManageLocationPage();
+		assertTrue(managelocationpage.getResultTabledata().contains(managelocationpage.gettextLocationFromSearch()),	"The location list is not displayed as per the given data");
 
 	}
 

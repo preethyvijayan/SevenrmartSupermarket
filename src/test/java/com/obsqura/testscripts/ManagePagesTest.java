@@ -1,19 +1,13 @@
 package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.ManagePagesPage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
-import io.reactivex.rxjava3.functions.Action;
+
 
 public class ManagePagesTest extends Base {
 	LoginPage loginpage;
@@ -22,27 +16,23 @@ public class ManagePagesTest extends Base {
 
 	@Test(retryAnalyzer = Retry.class)
 
-	public void toDeletePages() throws IOException 
-	{
+	public void checkWhethertheUserCanAbleToViewtheAlertMessageandAlsoCheckingtheDeletedItemIsShowingInTableAfterDeletingThePage() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(9, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(9, 0, "Categories"));
 		managepagespage = new ManagePagesPage(driver);
-		managepagespage.toClickManagePagesCategory().toClickSearchButton();
-		managepagespage.toEnterTitle();
-		managepagespage.toClickSecondSearchButton();
-		String expecteddata = managepagespage.togetTitle1();
-		String actualData = managepagespage.todeleteData();
+		managepagespage.clickManagePagesCategory().clickSearchButton();
+		managepagespage.enterTitle();
+		managepagespage.clickSecondSearchButton();
+		String expecteddata = managepagespage.getdeletedTitle();
+		String actualData = managepagespage.getdeleteData();
 		assertTrue(actualData.equals(expecteddata), "Data in title and  data  in table is not same");
-		managepagespage.todeleteData();
-		managepagespage.toClickDeleteButton();
-		assertTrue(managepagespage.toDisplayAlertElement() == true,
-				"Alert box is not displaying after succesfull deleting the page");
-
+		managepagespage.getdeleteData();
+		managepagespage.clickDeleteButton();
+		assertTrue(managepagespage.isDisplayAlertElementdisplayed(),	"Alert box is not displaying after succesfull deleting the page");
 	}
 
 }

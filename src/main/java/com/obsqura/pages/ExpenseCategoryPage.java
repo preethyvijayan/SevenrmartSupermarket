@@ -2,27 +2,30 @@ package com.obsqura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import Utilities.FakeUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ExpenseCategoryPage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ExpenseCategoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By tableElements = By.xpath("//div[@class='card-header']//following::tr");
+	@FindAll({ @FindBy(xpath = "//div[@class='card-header']//following::tr") })
+	public List<WebElement> table;
+
 	@FindBy(xpath = "//div[@class='card-header']//following::td")
 	WebElement expenseCategorySearchElement;
 	@FindBy(xpath = "//a[text()=' New']")
@@ -50,88 +53,83 @@ public class ExpenseCategoryPage {
 	@FindBy(xpath = "//div[@class='card-header']//following::tr")
 	WebElement tableelement;
 
-	public void toClickNewButton() {
-		WaitUtility.waitForElementClickable(driver, newButtonElement);
-		PageUtility.isElementDisplayed(newButtonElement);
-		PageUtility.clickOnElement(newButtonElement);
+	public void clickNewButton() {
+		waitutility.waitForElementClickable(driver, newButtonElement);
+		pageutility.isElementDisplayed(newButtonElement);
+		newButtonElement.click();
 	}
 
-	public String toEnterTitle() {
-		PageUtility.isElementDisplayed(titleElement);
-		String input = fakeutility.togetfoodName();
-		PageUtility.enterText(titleElement, input);
+	public String enterTitle() {
+		pageutility.isElementDisplayed(titleElement);
+		String input = fakeutility.togetProductName();
+		titleElement.sendKeys(input);
 		return input;
 
 	}
 
-	public ExpenseCategoryPage toEnterTitleforSearch() {
-		PageUtility.isElementDisplayed(searchTitleElement);
-		String value = expenseCategorySearchElement.getText();
-		PageUtility.enterText(searchTitleElement, value);
-		return this;
-
-	}
-
-	public String toEnterTitleforSearchVerify() {
-		String s = expenseCategorySearchElement.getText();
-		return s;
-
-	}
-
-	public void toClickSavebutton() {
-		WaitUtility.waitForElementClickable(driver, saveButtonElement);
-		PageUtility.isElementDisplayed(saveButtonElement);
-		PageUtility.clickOnElement(saveButtonElement);
-	}
-
-	public void toClickResetbutton() {
-		WaitUtility.waitForElementClickable(driver, resetButtonElement);
-		PageUtility.isElementDisplayed(resetButtonElement);
-		PageUtility.clickOnElement(resetButtonElement);
-	}
-
-	public ExpenseCategoryPage toClickSearchbutton() {
-		WaitUtility.waitForElementClickable(driver, searchButtonElement);
-		PageUtility.isElementDisplayed(searchButtonElement);
-		PageUtility.clickOnElement(searchButtonElement);
+	public ExpenseCategoryPage enterTitleforSearch() {
+		pageutility.isElementDisplayed(searchTitleElement);
+		String value = pageutility.getElementText(expenseCategorySearchElement);
+		searchTitleElement.sendKeys(value);
 		return this;
 	}
 
-	public ExpenseCategoryPage toclicksearchofsearchbutton() {
-		WaitUtility.waitForElementClickable(driver, toSearchtitleButtonelement);
-		PageUtility.isElementDisplayed(toSearchtitleButtonelement);
-		PageUtility.clickOnElement(toSearchtitleButtonelement);
+	public String getTitleforSearchVerify() {
+		return pageutility.getElementText(expenseCategorySearchElement);
+	}
+
+	public void clickSavebutton() {
+		waitutility.waitForElementClickable(driver, saveButtonElement);
+		pageutility.isElementDisplayed(saveButtonElement);
+		saveButtonElement.click();
+	}
+
+	public void clickResetbutton() {
+		waitutility.waitForElementClickable(driver, resetButtonElement);
+		pageutility.isElementDisplayed(resetButtonElement);
+		resetButtonElement.click();
+	}
+
+	public ExpenseCategoryPage clickSearchbutton() {
+		waitutility.waitForElementClickable(driver, searchButtonElement);
+		pageutility.isElementDisplayed(searchButtonElement);
+		searchButtonElement.click();
 		return this;
 	}
 
-	public String toverifytheCategoryListafteraddingnewCategory() {
-		PageUtility.isElementDisplayed(expenseCategorylistElement);
-		String output = PageUtility.getElementText(expenseCategorylistElement);
+	public ExpenseCategoryPage clicksearchButtoninSearchPage() {
+		waitutility.waitForElementClickable(driver, toSearchtitleButtonelement);
+		pageutility.isElementDisplayed(toSearchtitleButtonelement);
+		toSearchtitleButtonelement.click();
+		return this;
+	}
+
+	public String gettextFromExpenseCategoryListElement() {
+		pageutility.isElementDisplayed(expenseCategorylistElement);
+		String output = pageutility.getElementText(expenseCategorylistElement);
 		return output;
 	}
 
 	public String colorofButtonsNew() {
-		return PageUtility.getbackgroundcolorofButton(newButtonElement);
-
+		return pageutility.getbackgroundcolorofButton(newButtonElement);
 	}
 
 	public String colorofButtonsSearch() {
-		return PageUtility.getbackgroundcolorofButton(searchButtonElement);
+		return pageutility.getbackgroundcolorofButton(searchButtonElement);
 	}
 
 	public String colorofButtonsReset() {
-		return PageUtility.getbackgroundcolorofButton(resetButtoncolorElement);
+		return pageutility.getbackgroundcolorofButton(resetButtoncolorElement);
 
 	}
 
-	public boolean toCheckAlert() {
-		return PageUtility.isElementDisplayed(alertElement);
+	public boolean isCheckAlertEnabled() {
+		return pageutility.elementIsEnabled(alertElement);
 
 	}
 
-	public String totableData() {
+	public String getTableData() {
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(tableElements);
 
 		for (WebElement data : table) {
 			String actual = data.getText();
@@ -141,18 +139,17 @@ public class ExpenseCategoryPage {
 		return al.toString();
 	}
 
-	public String togetTitle() {
-		PageUtility.isElementDisplayed(titleElement);
-		return titleElement.getAttribute("value");
-
+	public String getTextFromTitle() {
+		pageutility.isElementDisplayed(titleElement);
+		return pageutility.getToolTip(titleElement);
 	}
 
-	public boolean titleElementDisplay() {
-		return PageUtility.isElementDisplayed(titleElement);
+	public boolean istitleElementDisplayed() {
+		return pageutility.isElementDisplayed(titleElement);
 	}
 
-	public boolean toReset() {
-		return PageUtility.isElementDisplayed(tableelement);
+	public boolean isResetElementDisplayed() {
+		return pageutility.isElementDisplayed(tableelement);
 	}
 
 }

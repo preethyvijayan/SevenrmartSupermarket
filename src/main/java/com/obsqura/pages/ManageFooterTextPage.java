@@ -2,28 +2,30 @@ package com.obsqura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.FakeUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ManageFooterTextPage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
-	PageUtility pageutility;
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManageFooterTextPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By tableElements = By.xpath("//div[@class='card-header']//following::td");
+	@FindAll({ @FindBy(xpath = "//div[@class='card-header']//following::td") })
+	public List<WebElement> tableElements;
 	@FindBy(xpath = "//p[starts-with(text(),'Manage Footer')]")
 	WebElement manageFooterTextCategoryElement;
 	@FindBy(xpath = "//a[contains(@href,'edit=2')]")
@@ -39,65 +41,63 @@ public class ManageFooterTextPage {
 	@FindBy(xpath = "//button[@data-dismiss='alert']//ancestor::div[contains(@class,'alert-dismissible')]")
 	WebElement alertElement;
 
-	public ManageFooterTextPage toselectSubcategoryManageFooterText() {
-		WaitUtility.waitForElementClickable(driver, manageFooterTextCategoryElement);
-		PageUtility.isElementDisplayed(manageFooterTextCategoryElement);
-		PageUtility.clickOnElement(manageFooterTextCategoryElement);
+	public ManageFooterTextPage selectSubcategoryManageFooterText() {
+		waitutility.waitForElementClickable(driver, manageFooterTextCategoryElement);
+		pageutility.isElementDisplayed(manageFooterTextCategoryElement);
+		manageFooterTextCategoryElement.click();
 		return this;
 
 	}
 
-	public ManageFooterTextPage toClickEditButton() {
-		WaitUtility.waitForElementClickable(driver, editButtonElement);
-		PageUtility.isElementDisplayed(editButtonElement);
-		PageUtility.clickOnElement(editButtonElement);
+	public ManageFooterTextPage clickEditButton() {
+		waitutility.waitForElementClickable(driver, editButtonElement);
+		pageutility.isElementDisplayed(editButtonElement);
+		editButtonElement.click();
 		return this;
 
 	}
 
-	public ManageFooterTextPage toEnterAddress() {
-		addressElement.clear();
-		PageUtility.isElementDisplayed(addressElement);
-		PageUtility.enterText(addressElement, fakeutility.togetstreetAddress());
+	public ManageFooterTextPage enterAddress() {
+		pageutility.clearElement(addressElement);
+		pageutility.isElementDisplayed(addressElement);
+		addressElement.sendKeys(fakeutility.togetstreetAddress());
 		return this;
 	}
 
-	public ManageFooterTextPage toEnterEmail() {
-		emailElement.clear();
-		PageUtility.isElementDisplayed(emailElement);
-		PageUtility.enterText(emailElement, fakeutility.togetemail());
+	public ManageFooterTextPage enterEmail() {
+		pageutility.clearElement(emailElement);
+		pageutility.isElementDisplayed(emailElement);
+		emailElement.sendKeys(fakeutility.togetemail());
 		return this;
 	}
 
-	public String toGetEmail() {
-		return emailElement.getAttribute("value");
+	public String getEmail() {
+		return pageutility.getToolTip(emailElement);
 	}
 
-	public ManageFooterTextPage toEnterPhoneNo() {
+	public ManageFooterTextPage enterPhoneNo() {
 		phoneNoElement.clear();
-		PageUtility.isElementDisplayed(phoneNoElement);
-		PageUtility.enterText(phoneNoElement, fakeutility.togetPhoneNo());
+		pageutility.isElementDisplayed(phoneNoElement);
+		phoneNoElement.sendKeys(fakeutility.togetPhoneNo());
 		return this;
 	}
 
-	public ManageFooterTextPage toClickUpdateButton() {
-		WaitUtility.waitForElementClickable(driver, updateButtonElement);
-		PageUtility.isElementDisplayed(updateButtonElement);
-		PageUtility.clickOnElement(updateButtonElement);
+	public ManageFooterTextPage clickUpdateButton() {
+		waitutility.waitForElementClickable(driver, updateButtonElement);
+		pageutility.isElementDisplayed(updateButtonElement);
+		updateButtonElement.click();
 		return this;
 
 	}
 
-	public boolean toDisplayAlertElement() {
-		WaitUtility.waitForElementClickable(driver, alertElement);
-		return PageUtility.isElementDisplayed(alertElement);
+	public boolean displayAlertElement() {
+		waitutility.waitForElementClickable(driver, alertElement);
+		return pageutility.isElementDisplayed(alertElement);
 	}
 
 	public String getTabledata() {
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(tableElements);
-
-		for (WebElement data : table) {
+		for (WebElement data : tableElements) {
 			String actual = data.getText();
 
 			al.add(actual);

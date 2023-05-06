@@ -3,23 +3,17 @@
 <suite name="Suite" parallel="tests" thread-count="2">
 	<parameter name="browser" value="chrome" />
 	<listeners>
-		<listener class-name="com.obsqura.testscripts.Listeners" />
+		<listener class-name="Retry.Listeners" />
 	</listeners>
 	<test name="test1">
-		<parameter name="bgcolorNew" value="rgba(220, 53, 69, 1)" />
-		<parameter name="bgcolorSearch" value="rgba(0, 123, 255, 1)" />
-		<parameter name="bgcolorReset" value="rgba(255, 193, 7, 1)" />
 		<classes>
-			<!-- <class name="com.obsqura.testscripts.LoginTest"/>
-		<class name="com.obsqura.testscripts.ExpenseCategoryTest"/>-->
+			<class name="com.obsqura.testscripts.ManageSliderTest" />
 		</classes>
 	</test>
 	<test name="test2">
-		<parameter name="logoname" value="7rmart supermarket" />
-		<parameter name="remarks" value="Expense" />
 		<classes>
-			<class name="com.obsqura.testscripts.ManageSliderTest" />
-			<!--<class name="com.obsqura.testscripts.VerifyLogonameTest"/> -->
+			<class name="com.obsqura.testscripts.ManagePaymentMethodsTest" />
+
 		</classes>
 	</test>
 	<!-- Test -->

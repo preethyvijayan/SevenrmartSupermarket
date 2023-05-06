@@ -3,26 +3,24 @@ package com.obsqura.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
-import Utilities.FakeUtility;
+import Utilities.GeneralUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ManageExpensePage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
-	PageUtility pageutility;
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManageExpensePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	By tableElements = By.xpath("//div[@class='card-header']//following::tr");
 
 	@FindBy(xpath = "//a[@class='nav-link']//child::p[text()='Manage Expense']")
 	WebElement manageExpensesecondElement;
@@ -30,7 +28,6 @@ public class ManageExpensePage {
 	WebElement tableHeadingElement;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
 	WebElement newButtonElement;
-
 	@FindBy(xpath = "//select[@id='user_id']")
 	WebElement userElement;
 	@FindBy(xpath = "//input[@id='ex_date']")
@@ -51,7 +48,6 @@ public class ManageExpensePage {
 	WebElement fileElement;
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement saveButtonElement;
-
 	@FindBy(xpath = "//div[@class='card-header']//following::tr")
 	WebElement tableElement;
 	@FindBy(xpath = "//div[@class='datepicker-days']//child::td[@class='active day']")
@@ -59,126 +55,115 @@ public class ManageExpensePage {
 	@FindBy(xpath = "//button[@data-dismiss='alert']//ancestor::div[contains(@class,'alert-dismissible')]")
 	WebElement alertElement;
 
-	public void toselectSubcategoryManageExpense() {
-		WaitUtility.waitForElementClickable(driver, manageExpensesecondElement);
-		PageUtility.isElementDisplayed(manageExpensesecondElement);
-		PageUtility.clickOnElement(manageExpensesecondElement);
+	public void selectSubcategoryManageExpense() {
+		waitutility.waitForElementClickable(driver, manageExpensesecondElement);
+		pageutility.isElementDisplayed(manageExpensesecondElement);
+		manageExpensesecondElement.click();
 
 	}
 
-	public String togetheadingsofExpenseTable() {
-		PageUtility.isElementDisplayed(tableHeadingElement);
-		String s = tableHeadingElement.getText();
-		return s;
+	public String getheadingsofExpenseTable() {
+		pageutility.isElementDisplayed(tableHeadingElement);
+		return pageutility.getElementText(tableHeadingElement);
+
 	}
 
-	public ManageExpensePage toClickNewButtonforAddingexpense() {
-		WaitUtility.waitForElementClickable(driver, newButtonElement);
-		PageUtility.isElementDisplayed(newButtonElement);
-		PageUtility.clickOnElement(newButtonElement);
+	public ManageExpensePage clickNewButtonforAddingexpense() {
+		waitutility.waitForElementClickable(driver, newButtonElement);
+		pageutility.isElementDisplayed(newButtonElement);
+		newButtonElement.click();
 		return this;
 
 	}
 
-	public ManageExpensePage toSelectUser() {
-		WaitUtility.waitForElementClickable(driver, userElement);
-		PageUtility.selectDropdownbyIndex(userElement, fakeutility.togetnumber(1, 20));
+	public ManageExpensePage selectUser() {
+		waitutility.waitForElementClickable(driver, userElement);
+		pageutility.selectDropdownbyIndex(userElement, fakeutility.togetnumber(1, 20));
 		return this;
 
 	}
 
-	public ManageExpensePage toEnterDate() {
-		WaitUtility.waitForElementClickable(driver, dateElement);
+	public ManageExpensePage enterDate() {
+		waitutility.waitForElementClickable(driver, dateElement);
 		dateElement.clear();
-		PageUtility.isElementDisplayed(dateElement);
-		PageUtility.enterText(dateElement, fakeutility.togetdate());
-		PageUtility.isElementDisplayed(datePickerElement);
-		PageUtility.clickOnElement(datePickerElement);
+		pageutility.isElementDisplayed(dateElement);
+		dateElement.sendKeys(fakeutility.togetdate());
+		pageutility.isElementDisplayed(datePickerElement);
+		datePickerElement.click();
 		return this;
 	}
 
-	public ManageExpensePage toSelectCategory() {
-		WaitUtility.waitForElementClickable(driver, categoryElement);
-		PageUtility.selectDropdownbyIndex(categoryElement, fakeutility.togetnumber(1, 50));
+	public ManageExpensePage selectCategory() {
+		waitutility.waitForElementClickable(driver, categoryElement);
+		pageutility.selectDropdownbyIndex(categoryElement, fakeutility.togetnumber(1, 50));
 		return this;
 	}
 
-	public void toSelectCategoryforUpdate() {
-		WaitUtility.waitForElementClickable(driver, categoryElement);
-		PageUtility.selectDropdownbyIndex(categoryElement, 12);
+	public void selectCategoryforUpdate() {
+		waitutility.waitForElementClickable(driver, categoryElement);
+		pageutility.selectDropdownbyIndex(categoryElement, 12);
 	}
 
-	public ManageExpensePage toSelectOrderId() {
-		WaitUtility.waitForElementClickable(driver, orderidElement);
-		Select objSelect = new Select(orderidElement);
+	public ManageExpensePage selectOrderId() {
+		waitutility.waitForElementClickable(driver, orderidElement);
 		int number = fakeutility.togetnumber(1, 100);
-		objSelect.selectByIndex(number);
+		pageutility.selectDropdownbyIndex(orderidElement, number);
 		return this;
 	}
 
-	public ManageExpensePage toSelectPrchaseId() {
-		WaitUtility.waitForElementClickable(driver, purchaseidElement);
-		PageUtility.selectDropdownbyIndex(purchaseidElement, fakeutility.togetnumber(1, 100));
+	public ManageExpensePage selectPrchaseId() {
+		waitutility.waitForElementClickable(driver, purchaseidElement);
+		pageutility.selectDropdownbyIndex(purchaseidElement, fakeutility.togetnumber(1, 100));
 		return this;
 	}
 
-	public ManageExpensePage toSelectExpensetype() {
-		WaitUtility.waitForElementClickable(driver, expensetypeElement);
-		PageUtility.selectDropdownbyIndex(expensetypeElement, fakeutility.togetnumber(1, 4));
+	public ManageExpensePage selectExpensetype() {
+		waitutility.waitForElementClickable(driver, expensetypeElement);
+		pageutility.selectDropdownbyIndex(expensetypeElement, fakeutility.togetnumber(1, 4));
 		return this;
 	}
 
-	public ManageExpensePage toEnterAmount() {
-		WaitUtility.waitForElementClickable(driver, amountElement);
+	public ManageExpensePage enterAmount() {
+		waitutility.waitForElementClickable(driver, amountElement);
 		int amount = fakeutility.togetnumber(100, 3000);
 		String number = String.valueOf(amount);
-		amountElement.clear();
-		PageUtility.enterText(amountElement, number);
+		pageutility.clearElement(amountElement);
+		amountElement.sendKeys(number);
 		return this;
 	}
 
-	public ManageExpensePage toEnterRemarks() {
-		WaitUtility.waitForElementClickable(driver, remarksElement);
-		remarksElement.clear();
-		PageUtility.enterText(remarksElement, fakeutility.togetfruit());
+	public ManageExpensePage enterRemarks() {
+		waitutility.waitForElementClickable(driver, remarksElement);
+		pageutility.clearElement(remarksElement);
+		remarksElement.sendKeys(fakeutility.togetfruit());
 		return this;
 	}
 
-	public ManageExpensePage toUploadFile() {
-		fileElement.sendKeys("E://uploadfile//managetestFile.png");
+	public ManageExpensePage uploadFile() {
+		try {
+			pageutility.sendKey(fileElement, GeneralUtility.IMAGEFILEFORMANAGEEXPENSEPAGE);
+		} catch (Exception e) {
+			System.out.println("FilenotFoundException");
+		}
 		return this;
 
 	}
 
-	public ManageExpensePage toClickSaveButtonforAddingexpense() {
-		WaitUtility.waitForElementClickable(driver, saveButtonElement);
-		PageUtility.isElementDisplayed(saveButtonElement);
-		Actions actions = new Actions(driver);
-		actions.click(saveButtonElement).perform();
+	public ManageExpensePage clickSaveButtonforAddingexpense() {
+		waitutility.waitForElementClickable(driver, saveButtonElement);
+		pageutility.isElementDisplayed(saveButtonElement);
+		pageutility.actionClick(saveButtonElement, driver);
 		return this;
 	}
 
-	public boolean toDisplayAlertElement() {
-		WaitUtility.waitForElementClickable(driver, alertElement);
-		return PageUtility.isElementDisplayed(alertElement);
+	public boolean isDisplayedAlertElement() {
+		waitutility.waitForElementClickable(driver, alertElement);
+		return pageutility.isElementDisplayed(alertElement);
 	}
 
 	public void toDisplaytableElement() {
-		WaitUtility.waitForElementClickable(driver, tableElement);
-		PageUtility.isElementDisplayed(tableElement);
+		waitutility.waitForElementClickable(driver, tableElement);
+		pageutility.isElementDisplayed(tableElement);
 	}
-
-	/*
-	 * public void togetTabledata() { List<WebElement>
-	 * tabledatas=driver.findElements(tableElements);
-	 * 
-	 * for(WebElement data:tabledatas) { if(data.getText().contains(toSelectUser()))
-	 * { data.getText(); break; } WaitUtility.waitForElement(driver, tableElements);
-	 * 
-	 * }
-	 * 
-	 * 
-	 * }
-	 */
 
 }

@@ -9,31 +9,29 @@
 	<parameter name="name" value="Dillan" />
 	<parameter name="email" value="bernetta.oberbrunner@yahoo.com" />
 	<parameter name="phone" value="1-645-907-0200" />
-	<parameter name="category" value="176" />
-	<parameter name="categoryforSearch" value="Peaches" />
 	<parameter name="offercode" value="1697" />
 	<listeners>
-		<listener class-name="com.obsqura.testscripts.Listeners" />
+		<listener class-name="Retry.Listeners" />
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com.obsqura.testscripts.ExpenseCategoryTest" />
+		<class name="com.obsqura.testscripts.ExpenseCategoryTest" />
 			<class name="com.obsqura.testscripts.LoginTest" />
 			<class name="com.obsqura.testscripts.ManageCategoryCategoryTest" />
 			<class name="com.obsqura.testscripts.ManageCategorySubcategoryTest" />
 			<class name="com.obsqura.testscripts.ManageDeliveryBoyTest" />
 			<class name="com.obsqura.testscripts.ManageExpenseTest" />
 			<class name="com.obsqura.testscripts.ManageFooterTextTest" />
+			<class name="com.obsqura.testscripts.ManageLocationTest" />
 			<class name="com.obsqura.testscripts.ManageNewsTest" />
 			<class name="com.obsqura.testscripts.ManageOfferCodeTest" />
 			<class name="com.obsqura.testscripts.ManagePagesTest" />
 			<class name="com.obsqura.testscripts.ManagePaymentMethodsTest" />
 			<class name="com.obsqura.testscripts.ManageSliderTest" />
-			<class name="com.obsqura.testscripts.ManageSliderTest" />
-			<class name="com.obsqura.testscripts.PushNotificationTest" />
-			<class name="com.obsqura.testscripts.VerifyLogonameTest" />
-			<class name="com.obsqura.testscripts.ManageLocationTest" />
 			<class name="com.obsqura.testscripts.MobileSliderTest" />
+			<class name="com.obsqura.testscripts.PushNotificationTest" />
+			<class name="com.obsqura.testscripts.VerifyLogonameTest" /> 
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

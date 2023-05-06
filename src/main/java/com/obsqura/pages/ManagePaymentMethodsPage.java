@@ -2,27 +2,31 @@ package com.obsqura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.FakeUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ManagePaymentMethodsPage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManagePaymentMethodsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By tableData = By.xpath("//div[@class='card-header']//following::td");
+	@FindAll({ @FindBy(xpath = "//div[@class='card-header']//following::td") })
+	public List<WebElement> tableData;
+
 	@FindBy(xpath = "//a[contains(@href,'edit=1&page_ad=1')]")
 	WebElement editButtonElement;
 	@FindBy(xpath = "//input[@id='name']")
@@ -34,39 +38,37 @@ public class ManagePaymentMethodsPage {
 	@FindBy(xpath = "//button[@data-dismiss='alert']//ancestor::div[contains(@class,'alert-dismissible')]")
 	WebElement alertElement;
 
-	public ManagePaymentMethodsPage toClickEditButtonin_ManagePaymentMethodsPage() {
-		WaitUtility.waitForElementClickable(driver, editButtonElement);
-		PageUtility.isElementDisplayed(editButtonElement);
-		PageUtility.clickOnElement(editButtonElement);
+	public ManagePaymentMethodsPage clickEditButtonin_ManagePaymentMethodsPage() {
+		waitutility.waitForElementClickable(driver, editButtonElement);
+		pageutility.isElementDisplayed(editButtonElement);
+		editButtonElement.click();
 		return this;
 	}
 
-	public ManagePaymentMethodsPage toEnterPayLimit() {
-		PageUtility.isElementDisplayed(payLimitElement);
-		payLimitElement.clear();
-		PageUtility.enterText(payLimitElement, fakeutility.togetStringnumber(5));
+	public ManagePaymentMethodsPage enterPayLimit() {
+		pageutility.isElementDisplayed(payLimitElement);
+		pageutility.clearElement(payLimitElement);
+		payLimitElement.sendKeys(fakeutility.togetStringnumber(5));
 		return this;
 	}
 
-	public void toEnterTitle(String value) {
-		PageUtility.isElementDisplayed(titleElement);
-		titleElement.clear();
-		PageUtility.enterText(titleElement, value);
+	public void enterTitle(String value) {
+		pageutility.isElementDisplayed(titleElement);
+		pageutility.clearElement(titleElement);
+		titleElement.sendKeys(value);
 	}
 
-	public ManagePaymentMethodsPage toClickUpdateButtonin_ManagePaymentMethodsPage() {
-		WaitUtility.waitForElementClickable(driver, updateButtonElement);
-		PageUtility.isElementDisplayed(updateButtonElement);
-		PageUtility.clickOnElement(updateButtonElement);
+	public ManagePaymentMethodsPage clickUpdateButtonin_ManagePaymentMethodsPage() {
+		waitutility.waitForElementClickable(driver, updateButtonElement);
+		pageutility.isElementDisplayed(updateButtonElement);
+		updateButtonElement.click();
 		return this;
 	}
 
-	public String togetResultTabledata() {
+	public String getResultfromTabledata() {
 
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(tableData);
-
-		for (WebElement data : table) {
+		for (WebElement data : tableData) {
 			String actual = data.getText();
 
 			al.add(actual);
@@ -77,17 +79,17 @@ public class ManagePaymentMethodsPage {
 
 	}
 
-	public String gettextPayLimit() {
-		return payLimitElement.getAttribute("value");
+	public String gettextfromPayLimit() {
+		return pageutility.getToolTip(payLimitElement);
 	}
 
-	public String gettextTitle() {
-		return titleElement.getAttribute("value");
+	public String gettextfromTitle() {
+		return pageutility.getToolTip(titleElement);
 	}
 
-	public boolean toDisplayAlertElement() {
-		WaitUtility.waitForElementClickable(driver, alertElement);
-		return PageUtility.isElementDisplayed(alertElement);
+	public boolean isDisplayAlertElementIsDisplayed() {
+		waitutility.waitForElementClickable(driver, alertElement);
+		return pageutility.isElementDisplayed(alertElement);
 	}
 
 }

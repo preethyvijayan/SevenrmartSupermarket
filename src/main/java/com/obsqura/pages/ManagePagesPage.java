@@ -2,32 +2,33 @@ package com.obsqura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.FakeUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
-import io.reactivex.rxjava3.functions.Action;
 
 public class ManagePagesPage {
 	public WebDriver driver;
 
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManagePagesPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By searchtableElements = By.xpath("//div[@class='card-header']//following::td");
-
-	By deleteElements = By.xpath("//a[starts-with(@href,'https://groceryapp.uniqassosiates.com/admin/pages/delete')]");
+	@FindAll({ @FindBy(xpath = "//div[@class='card-header']//following::td") })
+	public List<WebElement> searchtableElements;
+	@FindAll({ @FindBy(xpath = "//a[starts-with(@href,'https://groceryapp.uniqassosiates.com/admin/pages/delete')]") })
+	public List<WebElement> deleteElements;
 
 	@FindBy(xpath = "//p[text()='Manage Pages']")
 	WebElement managePageSubcatElement;
@@ -37,7 +38,6 @@ public class ManagePagesPage {
 	WebElement titleElement;
 	@FindBy(xpath = "//button[@name='Search']")
 	WebElement secondSearchButtonElement;
-
 	@FindBy(xpath = "//a[contains(@onclick,'return confirm')]")
 	WebElement deleteElement;
 	@FindBy(xpath = "//div[@class='card-header']//following::td[1]")
@@ -45,55 +45,52 @@ public class ManagePagesPage {
 	@FindBy(xpath = "//section[@class='content']//following::div[4]")
 	WebElement alertElement;
 
-	public ManagePagesPage toClickManagePagesCategory() {
-		WaitUtility.waitForElementClickable(driver, managePageSubcatElement);
-		PageUtility.isElementDisplayed(managePageSubcatElement);
-		PageUtility.clickOnElement(managePageSubcatElement);
+	public ManagePagesPage clickManagePagesCategory() {
+		waitutility.waitForElementClickable(driver, managePageSubcatElement);
+		pageutility.isElementDisplayed(managePageSubcatElement);
+		managePageSubcatElement.click();
 		return this;
 	}
 
-	public String togettableDatatoSearch() {
-		PageUtility.isElementDisplayed(toSearchElement);
-		return totableData();
+	public String gettableDatatoSearch() {
+		pageutility.isElementDisplayed(toSearchElement);
+		return gettableData();
 	}
 
-	public ManagePagesPage toClickSearchButton() {
-		WaitUtility.waitForElementClickable(driver, searchButtonElement);
-		PageUtility.isElementDisplayed(searchButtonElement);
-		PageUtility.clickOnElement(searchButtonElement);
+	public ManagePagesPage clickSearchButton() {
+		waitutility.waitForElementClickable(driver, searchButtonElement);
+		pageutility.isElementDisplayed(searchButtonElement);
+		searchButtonElement.click();
 		return this;
 	}
 
-	public String toEnterTitle() {
-		PageUtility.isElementDisplayed(titleElement);
-		String input = togettableDatatoSearch();
-		System.out.println(input);
-		PageUtility.enterText(titleElement, input);
+	public String enterTitle() {
+		pageutility.isElementDisplayed(titleElement);
+		String input = gettableDatatoSearch();
+		titleElement.sendKeys(input);
 		return input;
 
 	}
 
-	public void toClickSecondSearchButton() {
-		WaitUtility.waitForElementClickable(driver, secondSearchButtonElement);
-		PageUtility.isElementDisplayed(secondSearchButtonElement);
-		PageUtility.clickOnElement(secondSearchButtonElement);
+	public void clickSecondSearchButton() {
+		waitutility.waitForElementClickable(driver, secondSearchButtonElement);
+		pageutility.isElementDisplayed(secondSearchButtonElement);
+		secondSearchButtonElement.click();
 	}
 
-	public String togetTitle() {
-		PageUtility.isElementDisplayed(titleElement);
-		return titleElement.getAttribute("value");
+	public String getTitle() {
+		pageutility.isElementDisplayed(titleElement);
+		return pageutility.getToolTip(titleElement);
 
 	}
 
-	public String togetTitle1() {
-		return todeleteData();
+	public String getdeletedTitle() {
+		return getdeleteData();
 	}
 
-	public String totableData() {
+	public String gettableData() {
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(searchtableElements);
-
-		for (WebElement data : table) {
+		for (WebElement data : searchtableElements) {
 			String actual = data.getText();
 
 			al.add(actual);
@@ -101,28 +98,25 @@ public class ManagePagesPage {
 		return al.get(0).toString();
 	}
 
-	public String todeleteData() {
+	public String getdeleteData() {
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(deleteElements);
-
-		for (WebElement data : table) {
+		for (WebElement data : deleteElements) {
 			String actual = data.getAttribute("href");
-			System.out.println(actual);
 			al.add(actual);
 		}
 		return al.get(0);
 
 	}
 
-	public void toClickDeleteButton() {
-		WaitUtility.waitForElementClickable(driver, deleteElement);
-		PageUtility.isElementDisplayed(deleteElement);
-		PageUtility.clickOnElement(deleteElement);
+	public void clickDeleteButton() {
+		waitutility.waitForElementClickable(driver, deleteElement);
+		pageutility.isElementDisplayed(deleteElement);
+		deleteElement.click();
 		driver.switchTo().alert().accept();
 	}
 
-	public boolean toDisplayAlertElement() {
-		return PageUtility.isElementDisplayed(alertElement);
+	public boolean isDisplayAlertElementdisplayed() {
+		return pageutility.isElementDisplayed(alertElement);
 
 	}
 

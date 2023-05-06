@@ -9,21 +9,19 @@
   <parameter name="offercode" value="1697"/>
   <parameter name="bgcolorNew" value="rgba(220, 53, 69, 1)"/>
   <parameter name="name" value="Dillan"/>
-  <parameter name="categoryforSearch" value="Peaches"/>
-  <parameter name="category" value="176"/>
   <parameter name="email" value="bernetta.oberbrunner@yahoo.com"/>
   <listeners>
-    <listener class-name="com.obsqura.testscripts.Listeners"/>
+    <listener class-name="Retry.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.obsqura.testscripts.MobileSliderTest">
+      <class name="com.obsqura.testscripts.ManageLocationTest">
         <methods>
           <include name="initilizeBrowser"/>
-          <include name="tocreatea_newMobileSlider"/>
+          <include name="verifyUserCanAbletoViewThethelistofloactionbyCorrespondingSearchwithCountryandStatewhileClickonSearchButton"/>
           <include name="browserQuit"/>
         </methods>
-      </class> <!-- com.obsqura.testscripts.MobileSliderTest -->
+      </class> <!-- com.obsqura.testscripts.ManageLocationTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

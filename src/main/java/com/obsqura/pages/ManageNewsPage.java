@@ -1,28 +1,31 @@
 package com.obsqura.pages;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Utilities.FakeUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ManageNewsPage {
 	public WebDriver driver;
 	PageUtility pageutility = new PageUtility();
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManageNewsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By tableElement = By.xpath("//div[@class='card-header']//following::td");
+	@FindAll({ @FindBy(xpath = "//table[@id='dtBasicExample']") })
+	public List<WebElement> tableElement;
+
 	@FindBy(xpath = "//p[text()='Manage News']")
 	WebElement manageNewsSubcatElement;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
@@ -36,48 +39,43 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//div[@class='card-header']//following::td[1]")
 	WebElement tableElementdata;
 
-	public ManageNewsPage toClickManageNewsPageCategory() {
-		WaitUtility.waitForElementClickable(driver, manageNewsSubcatElement);
-		PageUtility.isElementDisplayed(manageNewsSubcatElement);
-		PageUtility.clickOnElement(manageNewsSubcatElement);
+	public ManageNewsPage clickManageNewsPageCategory() {
+		waitutility.waitForElementClickable(driver, manageNewsSubcatElement);
+		pageutility.isElementDisplayed(manageNewsSubcatElement);
+		manageNewsSubcatElement.click();
 		return this;
 	}
 
-	public ManageNewsPage toClickNewButtonElement() {
-		WaitUtility.waitForElementClickable(driver, newButtonElement);
-		PageUtility.isElementDisplayed(newButtonElement);
-		PageUtility.clickOnElement(newButtonElement);
+	public ManageNewsPage clickNewButtonElement() {
+		waitutility.waitForElementClickable(driver, newButtonElement);
+		pageutility.isElementDisplayed(newButtonElement);
+		newButtonElement.click();
 		return this;
 	}
 
-	public ManageNewsPage toEnterTextarea() {
-		PageUtility.isElementDisplayed(textAreaElement);
-		PageUtility.enterText(textAreaElement, fakeutility.togetanimalname());
-		return this;
-
-	}
-
-	public ManageNewsPage toClickSaveButtonElement() {
-		WaitUtility.waitForElementClickable(driver, saveButonElement);
-		PageUtility.isElementDisplayed(saveButonElement);
-		PageUtility.clickOnElement(saveButonElement);
+	public ManageNewsPage enterTextarea() {
+		pageutility.isElementDisplayed(textAreaElement);
+		textAreaElement.sendKeys(fakeutility.togetanimalname());
 		return this;
 
 	}
 
-	public boolean toCheckAlertinManageNewspage() {
-		WaitUtility.waitForElementClickable(driver, alertElement);
-		return PageUtility.isElementDisplayed(alertElement);
+	public ManageNewsPage clickSaveButtonElement() {
+		waitutility.waitForElementClickable(driver, saveButonElement);
+		pageutility.isElementDisplayed(saveButonElement);
+		saveButonElement.click();
+		return this;
+
+	}
+
+	public boolean isCheckAlertisDisplayedinManageNewspage() {
+		waitutility.waitForElementClickable(driver, alertElement);
+		return pageutility.isElementDisplayed(alertElement);
 	}
 
 	public String getTabledata() {
-		List<WebElement> table = driver.findElements(By.xpath("//table[@id='dtBasicExample']"));
-		for (WebElement data : table) {
-			String actualData = data.getText();
-
-			System.out.println(actualData);
-			// assertTrue(actualData.contains(expectedData), "Expected data is not in
-			// table");
+		for (WebElement data : tableElement) {
+			data.getText();
 		}
 		return getTabledata();
 

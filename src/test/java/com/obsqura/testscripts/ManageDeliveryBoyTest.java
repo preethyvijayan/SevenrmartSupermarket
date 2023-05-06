@@ -1,18 +1,14 @@
 package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.ManageDeliveryBoyPage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
+
 
 public class ManageDeliveryBoyTest extends Base {
 	LoginPage loginpage;
@@ -20,37 +16,36 @@ public class ManageDeliveryBoyTest extends Base {
 	ManageDeliveryBoyPage managedeliveryboypage;
 
 	@Test(retryAnalyzer = Retry.class)
-	public void addaNew_DeleiveryBoyDetails() throws IOException {
+	public void verifyUserCanAbeltoViewtheNewlyAddedDeleiveryBoyDetailsinListOfDeliveryBoyTbleWhileClickOnSaveButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(14, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(14, 0, "Categories"));
 		managedeliveryboypage = new ManageDeliveryBoyPage(driver);
-		managedeliveryboypage.toClickNewButtonforAdding_in().toEnterName().toEnterEmail().toEnterPhone()
-				.toEnterAddress().toEnterUsername();
+		managedeliveryboypage.clickNewButtonforAdding().enterName();
+		managedeliveryboypage.enterEmail(ExcelUtility.getString(1, 0, "ManageDeliveryBoy"));
+		managedeliveryboypage.enterPhone().enterAddress().enterUsername();
 		String expectedata = managedeliveryboypage.getTextFromUsername();
-		managedeliveryboypage.toEnterPassword().toClickSaveButtonforAddingNewDeliveryBoy();
+		managedeliveryboypage.enterPassword().clickSaveButtonforAddingNewDeliveryBoy();
 		String actualData = managedeliveryboypage.tableData();
 		assertTrue(actualData.contains(expectedata), "Newly Created delivery Boy is not included in table list");
 	}
 
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "name" })
-	public void search_DeleiveryBoyDetailsbyusing_Name(String name) throws IOException {
+	public void ValidateSearchDeleiveryBoyDetailsisDisplayingInListDeliveryBoyTablebyEnteredOnlyNameWhileClickingonSearchbutton(String name) {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(14, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(14, 0, "Categories"));
 		managedeliveryboypage = new ManageDeliveryBoyPage(driver);
-		managedeliveryboypage.toClickSearchButtonin_ManageDeliveryboy().toEnterNameForSearch(name);
+		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterNameForSearch(name);
 		String expectedData = managedeliveryboypage.getTextFromUsernameforsearch();
-		managedeliveryboypage.toClickSearchButtonforSearchin_ManageDeliveryboy();
+		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
 		String actualData = managedeliveryboypage.getresultTabledata();
 		assertTrue(actualData.contains(expectedData), "Search name is not included in table list");
 
@@ -58,37 +53,37 @@ public class ManageDeliveryBoyTest extends Base {
 
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "email" })
-	public void search_DeleiveryBoyDetailsbyusing_Email(String email) throws IOException {
+	public void ValidatesearchDeleiveryBoyDetailsisDisplayingInListDeliveryBoyTablebyEnteredEmailonlyWhileClickingonSearchbutton(
+			String email) {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(14, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(14, 0, "Categories"));
 		managedeliveryboypage = new ManageDeliveryBoyPage(driver);
-		managedeliveryboypage.toClickSearchButtonin_ManageDeliveryboy().toEnterEmailForSearch(email);
+		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterEmailForSearch(email);
 		String expectedData = managedeliveryboypage.getTextFromemailforsearch();
-		managedeliveryboypage.toClickSearchButtonforSearchin_ManageDeliveryboy();
+		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
 		String actualData = managedeliveryboypage.getresultTabledata();
 		assertTrue(actualData.contains(expectedData), "Search email is not included in table list");
 	}
 
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "phone" })
-	public void search_DeleiveryBoyDetailsbyusing_PhoneNo(String phone) throws IOException {
+	public void ValidatesearchDeleiveryBoyDetailsisDisplayingInListDeliveryBoyTablebyEnteredPhoneonlyWhileClickingonSearchbutton(
+			String phone) {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(14, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(14, 0, "Categories"));
 		managedeliveryboypage = new ManageDeliveryBoyPage(driver);
-		managedeliveryboypage.toClickSearchButtonin_ManageDeliveryboy().toEnterPhoneForSearch(phone);
-		managedeliveryboypage.toClickSearchButtonforSearchin_ManageDeliveryboy();
+		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterPhoneForSearch(phone);
+		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
 		String expectedData = managedeliveryboypage.getTextFromphoneforsearch();
-		managedeliveryboypage.toClickSearchButtonforSearchin_ManageDeliveryboy();
+		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
 		String actualData = managedeliveryboypage.getresultTabledata();
 		assertTrue(actualData.contains(expectedData), "Search phone is not included in table list");
 	}

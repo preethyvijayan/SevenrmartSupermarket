@@ -2,17 +2,13 @@ package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
-import java.io.IOException;
-
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.PushNotificationPage;
-
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.TestDataUtility;
+
 
 public class PushNotificationTest extends Base {
 	LoginPage loginpage;
@@ -20,31 +16,30 @@ public class PushNotificationTest extends Base {
 	PushNotificationPage pushnotificationpage;
 
 	@Test(retryAnalyzer = Retry.class)
-	public void tosendPushnotification() throws IOException {
+	public void verifyUserCanAbleToSeetheSuccesfullAlertMessageAfterSendingThePushNotificationBySendButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(12, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(12, 0, "Categories"));
 		pushnotificationpage = new PushNotificationPage(driver);
 		pushnotificationpage.toEnterTitle().toEnterDecsription().toClickSendbutton();
-		assertTrue(pushnotificationpage.toCheckAlert() == true,
-				"Alert information Message send succesfully is not displayed");
+		assertTrue(pushnotificationpage.toCheckAlert(), "Alert information Message send succesfully is not displayed");
+
 	}
 
 	@Test(retryAnalyzer = Retry.class)
-	public void Verify_resetButtonFunctionality() throws IOException {
+	public void VerifyUserCAnAbletoSeetheDescrptionAndTitleFieldinBlankWhileClickOnResetButton() {
+
 		String expectedTitle = "";
 		String expectedDescription = "";
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(12, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(12, 0, "Categories"));
 		pushnotificationpage = new PushNotificationPage(driver);
 		pushnotificationpage.toEnterTitle().toEnterDecsription().toClickSendbutton();
 		String actualTitle = pushnotificationpage.toCheckResetof_Title();

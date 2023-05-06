@@ -10,8 +10,8 @@ public class ExtentReportUtility {
 		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
 		reporter.config().setReportName("SevenRmart Project");
 		extentReports.attachReporter(reporter);
-		extentReports.setSystemInfo("SevenRmart", "Obsqura");
-		extentReports.setSystemInfo("Preethy", "Vijayan");
+		extentReports.setSystemInfo("Organization", "SevenrMartSupermarket");
+		extentReports.setSystemInfo("Name", "Preethy Vijayan");
 		return extentReports;
 	}
 }

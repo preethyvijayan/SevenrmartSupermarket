@@ -2,32 +2,36 @@ package com.obsqura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
-import Utilities.FakeUtility;
+import Utilities.GeneralUtility;
 import Utilities.PageUtility;
+import Utilities.RandomDataUtility;
 import Utilities.WaitUtility;
 
 public class ManageCategorySubcategoryPage {
 	public WebDriver driver;
-	FakeUtility fakeutility = new FakeUtility();
+	RandomDataUtility fakeutility = new RandomDataUtility();
+	PageUtility pageutility = new PageUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public ManageCategorySubcategoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	By categoryValuesFromSubcategory = By.xpath("//select[@id='cat_id']");
-	By tableData = By.xpath("//div[@class='card-header']//following::td");
-	By categoryValuesFromSubcategorySearch = By.xpath("//select[@id='un']");
+	@FindAll({ @FindBy(xpath = "//select[@id='cat_id']") })
+	public List<WebElement> categoryValuesFromSubcategory;
+	@FindAll({ @FindBy(xpath = "//select[@id='un']") })
+	public List<WebElement> categoryValuesFromSubcategorySearch;
+	@FindAll({ @FindBy(xpath = "//div[@class='card-header']//following::td") })
+	public List<WebElement> tableData;
+
 	@FindBy(xpath = "//p[text()='Sub Category']")
 	WebElement subCategoryMenuElement;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
@@ -51,132 +55,127 @@ public class ManageCategorySubcategoryPage {
 	@FindBy(xpath = "//select[@id='un']")
 	WebElement categoryValuesByindexFromSubcategorySearch;
 
-	public ManageCategorySubcategoryPage toSelectSubCategoryMenu() {
+	public ManageCategorySubcategoryPage selectSubCategoryMenu() {
 
-		WaitUtility.waitForElementClickable(driver, subCategoryMenuElement);
-		PageUtility.isElementDisplayed(subCategoryMenuElement);
-		PageUtility.clickOnElement(subCategoryMenuElement);
+		waitutility.waitForElementClickable(driver, subCategoryMenuElement);
+		pageutility.isElementDisplayed(subCategoryMenuElement);
+		subCategoryMenuElement.click();
 		return this;
 	}
 
-	public ManageCategorySubcategoryPage toClicknewButton() {
+	public ManageCategorySubcategoryPage clickNewButton() {
 
-		WaitUtility.waitForElementClickable(driver, newButtonElement);
-		PageUtility.isElementDisplayed(newButtonElement);
-		PageUtility.clickOnElement(newButtonElement);
+		waitutility.waitForElementClickable(driver, newButtonElement);
+		pageutility.isElementDisplayed(newButtonElement);
+		newButtonElement.click();
 		return this;
 	}
 
-	public ManageCategorySubcategoryPage toSelectCategory() {
-		WaitUtility.waitForElementClickable(driver, categoryElement);
-		Select objSelect = new Select(categoryElement);
-		objSelect.selectByValue("176");
+	public void selectCategory(String text) {
+		waitutility.waitForElementClickable(driver, categoryElement);
+		pageutility.selectDropdownbyText(categoryElement, text);
+
+	}
+
+	public ManageCategorySubcategoryPage enterSubCategory() {
+		waitutility.waitForElementClickable(driver, subCategoryElement);
+		pageutility.isElementDisplayed(subCategoryElement);
+		subCategoryElement.sendKeys(fakeutility.togetVegetableName());
+		return this;
+
+	}
+
+	public ManageCategorySubcategoryPage uploadFile() {
+		waitutility.waitForElementClickable(driver, fileUploadElement);
+		try {
+			pageutility.sendKey(fileUploadElement, GeneralUtility.IMAGEFILEFORMANAGECATEGORYCATEGORYPAGE);
+		} catch (Exception e) {
+			System.out.println("FilenotFoundException");
+		}
 		return this;
 	}
 
-	public ManageCategorySubcategoryPage toEnterSubCategory() {
-		WaitUtility.waitForElementClickable(driver, subCategoryElement);
-		PageUtility.isElementDisplayed(subCategoryElement);
-		PageUtility.enterText(subCategoryElement, fakeutility.togetfruit());
-		return this;
-
-	}
-
-	public ManageCategorySubcategoryPage toUploadFile() {
-		WaitUtility.waitForElementClickable(driver, fileUploadElement);
-		fileUploadElement.sendKeys("E://uploadfile//ManageCategoryPage.png");
+	public ManageCategorySubcategoryPage clickSaveButton() {
+		waitutility.waitForElementClickable(driver, saveButtonElement);
+		pageutility.isElementDisplayed(saveButtonElement);
+		saveButtonElement.click();
 		return this;
 	}
 
-	public ManageCategorySubcategoryPage toClickSaveButton() {
-		WaitUtility.waitForElementClickable(driver, saveButtonElement);
-		PageUtility.isElementDisplayed(saveButtonElement);
-		PageUtility.clickOnElement(saveButtonElement);
-		return this;
+	public boolean isCheckAlertDisplayed() {
+		waitutility.waitForElementClickable(driver, alertElement);
+		return pageutility.isElementDisplayed(alertElement);
 	}
 
-	public boolean toCheckAlert() {
-		WaitUtility.waitForElementClickable(driver, alertElement);
-		return PageUtility.isElementDisplayed(alertElement);
+	public void clickSearchButton() {
+		waitutility.waitForElementClickable(driver, searchButtonElement);
+		pageutility.isElementDisplayed(searchButtonElement);
+		searchButtonElement.click();
 	}
 
-	public void toClickSearchButton() {
-		WaitUtility.waitForElementClickable(driver, searchButtonElement);
-		PageUtility.isElementDisplayed(searchButtonElement);
-		PageUtility.clickOnElement(searchButtonElement);
-	}
-
-	public String toGetCategory() {
+	public String getCategory() {
 
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(categoryValuesFromSubcategory);
-
-		for (WebElement data : table) {
+		for (WebElement data : categoryValuesFromSubcategory) {
 			String actual = data.getText();
 
 			al.add(actual);
 
 		}
-		System.out.println(al.toString());
+
 		return al.toString();
 
 	}
 
-	public String toGetCategoryFromSearch() {
+	public String getCategoryFromSearch() {
 
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(categoryValuesFromSubcategorySearch);
-
-		for (WebElement data : table) {
+		for (WebElement data : categoryValuesFromSubcategorySearch) {
 			String actual = data.getText();
 
 			al.add(actual);
 
 		}
-		System.out.println(al.toString());
+
 		return al.toString();
 
 	}
 
-	public void toSelectCategoryforSearch(String value) {
+	public void selectCategoryforSearch(String value) {
 
-		WaitUtility.waitForElementClickable(driver, categoryValuesByindexFromSubcategorySearch);
-		Select objSelect = new Select(categoryValuesByindexFromSubcategorySearch);
-		objSelect.selectByValue(value);
-
-	}
-
-	public void toEnterSubCategoryForSearch(String value) {
-		WaitUtility.waitForElementClickable(driver, subCategoryinSearchElement);
-		PageUtility.enterText(subCategoryinSearchElement, value);
+		waitutility.waitForElementClickable(driver, categoryValuesByindexFromSubcategorySearch);
+		pageutility.selectDropdownbyText(categoryValuesByindexFromSubcategorySearch, value);
 
 	}
 
-	public void toClickSearchButtonForSearch() {
+	public void enterSubCategoryForSearch(String value) {
+		waitutility.waitForElementClickable(driver, subCategoryinSearchElement);
+		subCategoryinSearchElement.sendKeys(value);
 
-		WaitUtility.waitForElementClickable(driver, searchButtonforSearchElement);
-		PageUtility.isElementDisplayed(searchButtonforSearchElement);
-		PageUtility.clickOnElement(searchButtonforSearchElement);
 	}
 
-	public String togetResultTabledata() {
+	public void clickSearchButtonForSearch() {
+
+		waitutility.waitForElementClickable(driver, searchButtonforSearchElement);
+		pageutility.isElementDisplayed(searchButtonforSearchElement);
+		searchButtonforSearchElement.click();
+	}
+
+	public String getResultTabledata() {
 
 		ArrayList<String> al = new ArrayList<String>();
-		List<WebElement> table = driver.findElements(tableData);
 
-		for (WebElement data : table) {
+		for (WebElement data : tableData) {
 			String actual = data.getText();
 
 			al.add(actual);
-
 		}
-		System.out.println(al.toString());
 		return al.toString();
-
 	}
 
 	public String gettextCategory() {
-		return subCategoryinSearchElement.getAttribute("value");
+		return pageutility.getToolTip(subCategoryinSearchElement);
+
 	}
 
 }

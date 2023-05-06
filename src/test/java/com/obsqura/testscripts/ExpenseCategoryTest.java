@@ -1,18 +1,16 @@
 package com.obsqura.testscripts;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
-import java.io.IOException;
+
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.obsqura.pages.CategorySelectionPage;
 import com.obsqura.pages.ExpenseCategoryPage;
 import com.obsqura.pages.LoginPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
-import Utilities.FakeUtility;
-import Utilities.TestDataUtility;
+
 
 public class ExpenseCategoryTest extends Base {
 
@@ -21,85 +19,78 @@ public class ExpenseCategoryTest extends Base {
 	ExpenseCategoryPage expensecategorypage;
 
 	@Test(groups = { "smoke", "regression" }, retryAnalyzer = Retry.class)
-	public void addNewExpenseCategory_and_VerifyAddingNewExpenceCategory_presentinTable() throws IOException {
+	public void verifyTheUserCanAbletoSeetheNewlyaddedExpenseinTableWhileClickonSaveButton() {
+
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Categories"));
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(2, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(2, 0, "Categories"));
 		expensecategorypage = new ExpenseCategoryPage(driver);
-		expensecategorypage.toClickNewButton();
-		expensecategorypage.toEnterTitle();
-		expensecategorypage.toClickSavebutton();
-		assertTrue(expensecategorypage.toCheckAlert() == true,
-				"Alert for succesfully added the category is not displayed");
-		String expectedCategory = expensecategorypage.togetTitle();
-		String actualCategory = expensecategorypage.totableData();
+		expensecategorypage.clickNewButton();
+		expensecategorypage.enterTitle();
+		expensecategorypage.clickSavebutton();
+		assertTrue(expensecategorypage.isCheckAlertEnabled(),	"Alert for succesfully added the category is not displayed");
+		String expectedCategory = expensecategorypage.getTextFromTitle();
+		String actualCategory = expensecategorypage.getTableData();
 		assertTrue(actualCategory.contains(expectedCategory), "Newly added expense category is not in the table");
 
 	}
 
 	@Test(groups = { "smoke" }, retryAnalyzer = Retry.class)
-	public void resettheTitle_usingReseButton() throws IOException {
+	public void verifytheUserCanAbletoseeTheTitleFieldIsBlankWhileClickOnResetButton() {
+
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Categories"));
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(2, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(2, 0, "Categories"));
 		expensecategorypage = new ExpenseCategoryPage(driver);
-		expensecategorypage.toClickNewButton();
-		expensecategorypage.toEnterTitle();
-		expensecategorypage.toClickResetbutton();
-		assertTrue(expensecategorypage.toReset() == true, "The reset is not working in the expense category page");
+		expensecategorypage.clickNewButton();
+		expensecategorypage.enterTitle();
+		expensecategorypage.clickResetbutton();
+		assertTrue(expensecategorypage.isCheckAlertEnabled(), "The reset is not working in the expense category page");
+
 	}
 
 	@Test(retryAnalyzer = Retry.class)
 	@Parameters({ "bgcolorNew", "bgcolorSearch", "bgcolorReset" })
-	public void VerifycolorofNew_Search_Resetbutton(String bgcolorNew, String bgcolorSearch, String bgcolorReset)
-			throws IOException {
+	public void ValidatetheColorOfNewSearchResetbuttonwithExpectedColor(String bgcolorNew, String bgcolorSearch,
+			String bgcolorReset) {
+
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Categories"));
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(2, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(2, 0, "Categories"));
 		expensecategorypage = new ExpenseCategoryPage(driver);
-		assertEquals(expensecategorypage.colorofButtonsNew(), bgcolorNew,
-				"Actual and expected color of New button is same");
-		assertEquals(expensecategorypage.colorofButtonsSearch(), bgcolorSearch,
-				"Actual and expected color of Search button is same");
-		assertEquals(expensecategorypage.colorofButtonsReset(), bgcolorReset,
-				"Actual and expected color of Reset button is same");
+		assertEquals(expensecategorypage.colorofButtonsNew(), bgcolorNew,	"Actual and expected color of New button is same");
+		assertEquals(expensecategorypage.colorofButtonsSearch(), bgcolorSearch,	"Actual and expected color of Search button is same");
+		assertEquals(expensecategorypage.colorofButtonsReset(), bgcolorReset,	"Actual and expected color of Reset button is same");
 
 	}
 
 	@Test(groups = { "regression" }, retryAnalyzer = Retry.class)
-	public void verifySearchbutton_functionality_andSearchedItemisShowing() throws IOException {
+	public void verifyUserCanAbleToVisibleTheSearchedCategoryinCategoryListTablewhileClickOnSearchButton() {
 		loginpage = new LoginPage(driver);
-		loginpage.loginUnameEnterText(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Login"));
-		loginpage.loginPassenterText(ExcelUtility.getString(1, 1, TestDataUtility.getProperty(), "Login"));
-		loginpage.toClickLoginbtn();
+		loginpage.enterLoginUname(ExcelUtility.getString(1, 0, "Login"));
+		loginpage.enterLoginPassword(ExcelUtility.getString(1, 1, "Login"));
+		loginpage.clickLoginbtn();
 		categoryselectionpage = new CategorySelectionPage(driver);
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(1, 0, TestDataUtility.getProperty(), "Categories"));
-		categoryselectionpage
-				.toClickSelectCategory(ExcelUtility.getString(2, 0, TestDataUtility.getProperty(), "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
+		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(2, 0, "Categories"));
 		expensecategorypage = new ExpenseCategoryPage(driver);
-		expensecategorypage.toClickSearchbutton().toEnterTitleforSearch().toclicksearchofsearchbutton();
-		String expected = expensecategorypage.toEnterTitleforSearchVerify();
-		String actual = expensecategorypage.toverifytheCategoryListafteraddingnewCategory();
+		expensecategorypage.clickSearchbutton().enterTitleforSearch().clicksearchButtoninSearchPage();
+		String expected = expensecategorypage.getTitleforSearchVerify();
+		String actual = expensecategorypage.gettextFromExpenseCategoryListElement();
 		assertEquals(actual, expected, "Given title is not included in the table");
+
 	}
 
 }

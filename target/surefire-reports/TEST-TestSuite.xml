@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="202.514" tests="33" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="187.579" tests="33" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\Dell\AppData\Local\Temp\surefire6485356071441087542\surefirebooter4829897663194186791.jar C:\Users\Dell\AppData\Local\Temp\surefire6485356071441087542 2023-04-28T17-21-33_816-jvmRun1 surefire5389499557662829698tmp surefire_04510414431449027698tmp"/>
+    <property name="sun.java.command" value="C:\Users\Dell\AppData\Local\Temp\surefire7029974165416431093\surefirebooter-20230507013245020_3.jar C:\Users\Dell\AppData\Local\Temp\surefire7029974165416431093 2023-05-07T01-32-44_789-jvmRun1 surefire-20230507013245020_1tmp surefire_0-20230507013245020_2tmp"/>
     <property name="surefire.test.class.path" value="E:\eclipse-workspace\SevenrmartSupermarket\target\test-classes;E:\eclipse-workspace\SevenrmartSupermarket\target\classes;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-java\4.9.0\selenium-java-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-api\4.9.0\selenium-api-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.9.0\selenium-chrome-driver-4.9.0.jar;C:\Users\Dell\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\Dell\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\Dell\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\Dell\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\Dell\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\Dell\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Dell\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\Dell\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\Dell\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.9.0\selenium-chromium-driver-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-json\4.9.0\selenium-json-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.9.0\selenium-manager-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v110\4.9.0\selenium-devtools-v110-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v111\4.9.0\selenium-devtools-v111-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v112\4.9.0\selenium-devtools-v112-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.9.0\selenium-devtools-v85-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.9.0\selenium-edge-driver-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.9.0\selenium-firefox-driver-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-http\4.9.0\selenium-http-4.9.0.jar;C:\Users\Dell\.m2\repository\dev\failsafe\failsafe\3.3.1\failsafe-3.3.1.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.9.0\selenium-ie-driver-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.9.0\selenium-remote-driver-4.9.0.jar;C:\Users\Dell\.m2\repository\io\netty\netty-buffer\4.1.91.Final\netty-buffer-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-codec-http\4.1.91.Final\netty-codec-http-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-codec\4.1.91.Final\netty-codec-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-handler\4.1.91.Final\netty-handler-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-common\4.1.91.Final\netty-common-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.91.Final\netty-transport-classes-epoll-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.91.Final\netty-transport-classes-kqueue-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport-native-epoll\4.1.91.Final\netty-transport-native-epoll-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.91.Final\netty-transport-native-kqueue-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.91.Final\netty-transport-native-unix-common-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport\4.1.91.Final\netty-transport-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-resolver\4.1.91.Final\netty-resolver-4.1.91.Final.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-api\1.25.0\opentelemetry-api-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-context\1.25.0\opentelemetry-context-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.25.0\opentelemetry-exporter-logging-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.25.0\opentelemetry-sdk-metrics-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.25.0-alpha\opentelemetry-sdk-logs-1.25.0-alpha.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.25.0-alpha\opentelemetry-api-logs-1.25.0-alpha.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.25.0-alpha\opentelemetry-api-events-1.25.0-alpha.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.25.0\opentelemetry-sdk-common-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.25.0\opentelemetry-sdk-extension-autoconfigure-spi-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.25.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.25.0-alpha.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.25.0\opentelemetry-sdk-trace-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.25.0\opentelemetry-sdk-1.25.0.jar;C:\Users\Dell\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Dell\.m2\repository\io\ous\jtoml\2.0.0\jtoml-2.0.0.jar;C:\Users\Dell\.m2\repository\net\bytebuddy\byte-buddy\1.14.4\byte-buddy-1.14.4.jar;C:\Users\Dell\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Dell\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\Dell\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\Dell\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\Dell\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\Dell\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\Dell\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.9.0\selenium-safari-driver-4.9.0.jar;C:\Users\Dell\.m2\repository\org\seleniumhq\selenium\selenium-support\4.9.0\selenium-support-4.9.0.jar;C:\Users\Dell\.m2\repository\org\apache\poi\poi\5.2.2\poi-5.2.2.jar;C:\Users\Dell\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\Dell\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Dell\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Dell\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\Dell\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Dell\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.2\log4j-api-2.17.2.jar;C:\Users\Dell\.m2\repository\org\apache\poi\poi-ooxml\5.2.2\poi-ooxml-5.2.2.jar;C:\Users\Dell\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.2\poi-ooxml-lite-5.2.2.jar;C:\Users\Dell\.m2\repository\org\apache\xmlbeans\xmlbeans\5.0.3\xmlbeans-5.0.3.jar;C:\Users\Dell\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;C:\Users\Dell\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\Dell\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\Dell\.m2\repository\com\aventstack\extentreports\5.0.9\extentreports-5.0.9.jar;C:\Users\Dell\.m2\repository\io\reactivex\rxjava3\rxjava\3.0.4\rxjava-3.0.4.jar;C:\Users\Dell\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\Dell\.m2\repository\org\freemarker\freemarker\2.3.30\freemarker-2.3.30.jar;C:\Users\Dell\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\Dell\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Dell\.m2\repository\com\github\javafaker\javafaker\1.0.2\javafaker-1.0.2.jar;C:\Users\Dell\.m2\repository\org\apache\commons\commons-lang3\3.5\commons-lang3-3.5.jar;C:\Users\Dell\.m2\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23-android.jar;C:\Users\Dell\.m2\repository\com\github\mifmif\generex\1.0.2\generex-1.0.2.jar;C:\Users\Dell\.m2\repository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar;C:\Users\Dell\.m2\repository\org\testng\testng\7.5\testng-7.5.jar;C:\Users\Dell\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar;C:\Users\Dell\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\Dell\.m2\repository\com\beust\jcommander\1.78\jcommander-1.78.jar;C:\Users\Dell\.m2\repository\org\webjars\jquery\3.5.1\jquery-3.5.1.jar;C:\Users\Dell\.m2\repository\io\github\bonigarcia\webdrivermanager\5.2.3\webdrivermanager-5.2.3.jar;C:\Users\Dell\.m2\repository\com\github\docker-java\docker-java\3.2.13\docker-java-3.2.13.jar;C:\Users\Dell\.m2\repository\com\github\docker-java\docker-java-core\3.2.13\docker-java-core-3.2.13.jar;C:\Users\Dell\.m2\repository\com\github\docker-java\docker-java-api\3.2.13\docker-java-api-3.2.13.jar;C:\Users\Dell\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\Dell\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\Dell\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\Dell\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.64\bcpkix-jdk15on-1.64.jar;C:\Users\Dell\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.64\bcprov-jdk15on-1.64.jar;C:\Users\Dell\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\Dell\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.2.13\docker-java-transport-httpclient5-3.2.13.jar;C:\Users\Dell\.m2\repository\com\github\docker-java\docker-java-transport\3.2.13\docker-java-transport-3.2.13.jar;C:\Users\Dell\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\Dell\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\Dell\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.1.3\httpclient5-5.1.3.jar;C:\Users\Dell\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.1.3\httpcore5-5.1.3.jar;C:\Users\Dell\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.1.3\httpcore5-h2-5.1.3.jar;C:\Users\Dell\.m2\repository\org\apache\logging\log4j\log4j-core\2.17.1\log4j-core-2.17.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Dell"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Dell\AppData\Local\Temp\surefire6485356071441087542\surefirebooter4829897663194186791.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Dell\AppData\Local\Temp\surefire7029974165416431093\surefirebooter-20230507013245020_3.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_202\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -52,7 +52,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;&quot;C:\Program Files\dotnet\;C:\Program Files\apache-maven-3.8.7\bin&quot;;C:\Program Files\Java\jdk1.8.0_202\bin;C:\apache-maven-3.8.7\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_202\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.1.v20211116-1657/jre/bin/server;E:/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.1.v20211116-1657/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;&quot;C:\Program Files\dotnet\;C:\Program Files\apache-maven-3.8.7\bin&quot;;C:\Program Files\Java\jdk1.8.0_202\bin;C:\apache-maven-3.8.7\bin;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Java\jdk1.8.0_202\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;E:\eclipse;;."/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="25.202-b08"/>
@@ -60,11 +60,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="VerifycolorofNew_Search_Resetbutton[rgba(220, 53, 69, 1), rgba(0, 123, 255, 1), rgba(255, 193, 7, 1)](1)" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="2.367">
+  <testcase name="ValidatetheColorOfNewSearchResetbuttonwithExpectedColor[rgba(220, 53, 69, 1), rgba(0, 123, 255, 1), rgba(255, 193, 7, 1)](1)" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="2.565">
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 7496
+Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 26542
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -73,8 +73,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="addNewExpenseCategory_and_VerifyAddingNewExpenceCategory_presentinTable" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="3.126">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 28709
+  <testcase name="verifyTheUserCanAbletoSeetheNewlyaddedExpenseinTableWhileClickonSaveButton" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="2.836">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 36752
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -83,8 +83,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="resettheTitle_usingReseButton" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="2.208">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 9329
+  <testcase name="verifyUserCanAbleToVisibleTheSearchedCategoryinCategoryListTablewhileClickOnSearchButton" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="2.14">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 4208
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -93,8 +93,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="verifySearchbutton_functionality_andSearchedItemisShowing" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="1.989">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 34022
+  <testcase name="verifytheUserCanAbletoseeTheTitleFieldIsBlankWhileClickOnResetButton" classname="com.obsqura.testscripts.ExpenseCategoryTest" time="1.916">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 30402
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -103,8 +103,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="loginwithValidusernameandValidPassword[admin, admin](1)" classname="com.obsqura.testscripts.LoginTest" time="0.544">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 18469
+  <testcase name="verifyTheUserCanAbletoLoginwithValidusernameandValidPasswordWhileClickonSignInButton[admin, admin](1)" classname="com.obsqura.testscripts.LoginTest" time="0.658">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 27380
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -113,8 +113,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="AddingnewCategoryin_Categorypage[176](1)" classname="com.obsqura.testscripts.ManageCategoryCategoryTest" time="10.124">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 40498
+  <testcase name="VerifyUserCanAbletoVisibleTheAlertMessageAftrerSuccesfullAddingofnewCategoryinCategorypageWhileClickOnSaveButton" classname="com.obsqura.testscripts.ManageCategoryCategoryTest" time="4.395">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 24368
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -123,8 +123,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="verifythenewCategorywillCreate_withoutManadotoryfield_Categoryin_Categorypage" classname="com.obsqura.testscripts.ManageCategoryCategoryTest" time="3.569">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 16906
+  <testcase name="verifytheUserCanAbleToseetheManadatoryMessagewhileaddingnewCategorywithoutEnteringTheManadotoryfieldCategoryWhileClcikOnSaveButton" classname="com.obsqura.testscripts.ManageCategoryCategoryTest" time="3.163">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 43106
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -133,8 +133,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="AddingnewSubCategoryin_SubCategorypage" classname="com.obsqura.testscripts.ManageCategorySubcategoryTest" time="4.779">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 9405
+  <testcase name="VerifyUserCanAbleToviewTheSearchedSubCategoryinListOfSubCategoryTablewhileclickonSearchButton" classname="com.obsqura.testscripts.ManageCategorySubcategoryTest" time="2.899">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 9071
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -143,10 +143,180 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="toSearchSubCategory_whileclickonSearchButton[Peaches, 176](1)" classname="com.obsqura.testscripts.ManageCategorySubcategoryTest" time="3.394">
-    <system-out><![CDATA[[Peaches, Fruit, , Active, ]
+  <testcase name="validatetheNewlyAddedcategoryisShowinginCateegoryTableWhileClickOnSearchButton" classname="com.obsqura.testscripts.ManageCategorySubcategoryTest" time="2.814">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 34745
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanAbletoSeeTheAlertMessageafterAddingThenewSubCategoryinSubCategorypageWhileClickOnSaveButton" classname="com.obsqura.testscripts.ManageCategorySubcategoryTest" time="4.864">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 33886
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="ValidateSearchDeleiveryBoyDetailsisDisplayingInListDeliveryBoyTablebyEnteredOnlyNameWhileClickingonSearchbutton[Dillan](1)" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="2.037">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 21515
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="ValidatesearchDeleiveryBoyDetailsisDisplayingInListDeliveryBoyTablebyEnteredEmailonlyWhileClickingonSearchbutton[bernetta.oberbrunner@yahoo.com](1)" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="1.89">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 7645
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="ValidatesearchDeleiveryBoyDetailsisDisplayingInListDeliveryBoyTablebyEnteredPhoneonlyWhileClickingonSearchbutton[1-645-907-0200](1)" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="2.056">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 30322
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanAbeltoViewtheNewlyAddedDeleiveryBoyDetailsinListOfDeliveryBoyTbleWhileClickOnSaveButton" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="3.561">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 34417
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifytheuserCanviewtheExpectedHeadingsinExpenseDetailsTableHeadings" classname="com.obsqura.testscripts.ManageExpenseTest" time="1.365">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 46236
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifyWhethertheUserCanAbletoviewAlertMessageafterSuccesfulladdingofNewExpenseCategory" classname="com.obsqura.testscripts.ManageExpenseTest" time="6.502">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 21270
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanableToViewtheUpdatedFooterTextinformationinFooterTextTableafterClickingOnupdateButton" classname="com.obsqura.testscripts.ManageFooterTextTest" time="3.261">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 48992
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="ValidateTheSuccesfullAlertMessageIsDispalyedafteraddingTheNewLocationtotheManageLocationPage" classname="com.obsqura.testscripts.ManageLocationTest" time="2.349">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 45069
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanAbletoViewThethelistofloactionbyCorrespondingSearchwithCountryandStatewhileClickonSearchButton" classname="com.obsqura.testscripts.ManageLocationTest" time="2.234">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 42397
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="VerifyWhetherTheUserCanabletoViewAlertMessageAfterSusccesfullAddingofNewstoManageNewsPagewhileClickOnSaveButton" classname="com.obsqura.testscripts.ManageNewsTest" time="2.552">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 36970
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="ValidateTheSearchOfferCodeIsDispalyingInListOfferCodeTableWhileClickOnSearchButton[1697](1)" classname="com.obsqura.testscripts.ManageOfferCodeTest" time="1.483">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 22270
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="VerifyTheUserCanAbletoNavigateTheCorrespondingpageManageGiftcardVoucherPageWhileClickOnMoreInfoIcon" classname="com.obsqura.testscripts.ManageOfferCodeTest" time="1.047">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 15058
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifyTheUserCanAbletoviewAlertMessageafterSuccesfullAddingOfNewOfferCodeinManageOfferCodePageWhileClickOnSaveButton" classname="com.obsqura.testscripts.ManageOfferCodeTest" time="2.681">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 19016
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="checkWhethertheUserCanAbleToViewtheAlertMessageandAlsoCheckingtheDeletedItemIsShowingInTableAfterDeletingThePage" classname="com.obsqura.testscripts.ManagePagesTest" time="3.888">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 24261
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="tocheckAlertMessageisShowingafterSuccesfullupdateOfBothTitleandPayLimitinManagePaymentMethod" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.155">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 18584
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanAbletoViewTheUpdatedPayLimitandTitleTogetherinManagePaymentmethodsTableWhileClickOnUpdateButton" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.143">
+    <system-out><![CDATA[[federalBank, 40000, Active, , Credit, 87215, Active, ]
 ]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 19216
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 5541
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -155,36 +325,10 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="verifythecategoryinNew_SubcategoryPageAndSearchCategoryPageis_Same" classname="com.obsqura.testscripts.ManageCategorySubcategoryTest" time="3.229">
-    <system-out><![CDATA[[]
-[         Select
-         
-                
-         Electronics
-                
-         Fashion
-                
-         Health Care
-                
-         Grocery
-                
-         Appliances
-                
-         Incaberries
-                
-         Bush Tomato
-                
-         Cherries
-                
-         Avocado
-                
-         Fruit
-                
-         176
-                
-          ]
+  <testcase name="verifyUserCanAbletoViewTheUpdatedPayLimitinManagePaymentmethodsTableWhileClickOnUpdateButton" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.066">
+    <system-out><![CDATA[[federalBank, 40000, Active, , Credit, 62084, Active, ]
 ]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 4751
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 8070
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -193,30 +337,10 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="addaNew_DeleiveryBoyDetails" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="3.914">
-    <system-out><![CDATA[TAble[Name Email Phone Number Address Username Status Password Action, Charles test123@gmail.com 127-803-0206 Charles Aisha Yost Wolff Active
-Details, , Melda test123@gmail.com (683) 487-7243 Melda Kum Jerde Boyle Active
-Details, , Jodie Leannon bernetta.oberbrunner@yahoo.com (996) 752-6612 Jodie Leannon pamila.lueilwitz Active
-Details, , Jillian test123@gmail.com 338-518-6180 Jillian Celia Mante Stiedemann I Active
-Details, , Shasta test123@gmail.com 439.878.2020 Shasta Lindsey Koch Pfeffer Active
-Details, , Courtney test123@gmail.com 506.020.0968 Courtney Katia Kling Dickens Active
-Details, , Rayford test123@gmail.com 094-934-1688 Rayford Patricia Wilderman Ortiz Active
-Details, , Truman test123@gmail.com 1-844-849-0906 Truman Anya Bins Pfannerstill PhD Active
-Details, , Zachary test123@gmail.com (453) 868-0022 Zachary Numbers Hessel Barrows Active
-Details, , Hal test123@gmail.com (481) 382-9207 Hal Tommie Sawayn Bayer Active
-Details, , Olympia test123@gmail.com 313.015.1780 Olympia Dr. Beverly Lubowitz Lind Active
-Details, , Emerald test123@gmail.com 1-997-839-5182 Emerald Clifford Prosacco Hintz Active
-Details, , .';l' ferfew@djfkld.com ;l';l' .';l' hkjhhj Active
-Details, , Tiffaney test123@gmail.com 302.843.2516 Tiffaney Antonio Hackett O'Conner Active
-Details, , ChristalClara 1-884-858-6200 ChristalClara qpibg01@gmail.comdmcnp90@gmail.com Active
-Details, , sds sds@gmail.com sdfsa sds sdsa Active
-Details, , anjana bfvx693@gmail.com 1231281573 anjana Madonna Active
-Details, , Maybell abc@gmail.com 540-013-0575 Maybell burley.faheycrEXW%o7 Active
-Details, , Evie abc@gmail.com 890.150.9200 Evie mireya.reichert$Ccm4G41 Active
-Details, , Gavin abc@gmail.com 490-204-9972 Gavin ellis.reichelx##%qs3n Active
-Details, ]
+  <testcase name="verifyUserCanAbletoViewTheUpdatedTitleinManagePaymentmethodsTablesWhileClickOnUpdateButton" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.067">
+    <system-out><![CDATA[[federalBank, 40000, Active, , Credit, 62084, Active, ]
 ]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 2911
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 39921
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -225,10 +349,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="search_DeleiveryBoyDetailsbyusing_Email[bernetta.oberbrunner@yahoo.com](1)" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="2.533">
-    <system-out><![CDATA[result[Jodie Leannon, bernetta.oberbrunner@yahoo.com, (996) 752-6612, Jodie Leannon, pamila.lueilwitz, Active, Details, , ]
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 48232
+  <testcase name="verifyUserCanAbletoViewTheAlertMessageafterAddingThenewListSlidersWhileClickOnSaveButon" classname="com.obsqura.testscripts.ManageSliderTest" time="3.163">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 34762
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -237,10 +359,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="search_DeleiveryBoyDetailsbyusing_Name[Dillan](1)" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="2.274">
-    <system-out><![CDATA[result[Dillan, abc@gmail.com, 778-677-3121, Dillan, rylee.pacochamHYft0ks, Active, Details, , ]
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 23269
+  <testcase name="validateTheUserCanAbleToViewTheAlertMessageAfterCreatingTheNewMobileSliderWhileClickOnSaveButton" classname="com.obsqura.testscripts.MobileSliderTest" time="2.824">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 12590
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -249,10 +369,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="search_DeleiveryBoyDetailsbyusing_PhoneNo[1-645-907-0200](1)" classname="com.obsqura.testscripts.ManageDeliveryBoyTest" time="2.543">
-    <system-out><![CDATA[result[.........RESULT NOT FOUND.......]
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 43990
+  <testcase name="VerifyUserCAnAbletoSeetheDescrptionAndTitleFieldinBlankWhileClickOnResetButton" classname="com.obsqura.testscripts.PushNotificationTest" time="2.114">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 5157
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -261,8 +379,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="verifyExpenseDetailsTable_Headings" classname="com.obsqura.testscripts.ManageExpenseTest" time="2.01">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 41296
+  <testcase name="verifyUserCanAbleToSeetheSuccesfullAlertMessageAfterSendingThePushNotificationBySendButton" classname="com.obsqura.testscripts.PushNotificationTest" time="2.183">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 40588
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.
@@ -271,191 +389,8 @@ Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft
 Microsoft Edge WebDriver was started successfully.
 ]]></system-err>
   </testcase>
-  <testcase name="toAddNewExpense" classname="com.obsqura.testscripts.ManageExpenseTest" time="8.699">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 13112
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="update_FooterText" classname="com.obsqura.testscripts.ManageFooterTextTest" time="3.679">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 48039
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="toAddNewstoManage_NewsPage" classname="com.obsqura.testscripts.ManageNewsTest" time="2.818">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 33095
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="toCheckTheFuctionalityofMoreInfoicon" classname="com.obsqura.testscripts.ManageOfferCodeTest" time="0.958">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 46580
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="toSearchOfferCodein_ManageOfferCodePage[1697](1)" classname="com.obsqura.testscripts.ManageOfferCodeTest" time="1.557">
-    <system-out><![CDATA[[1697 (First Order), 4%, £8116, , Active, ]
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 37017
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="toaddOfferCodein_ManageOfferCodePage" classname="com.obsqura.testscripts.ManageOfferCodeTest" time="2.912">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 10329
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="toDeletePages" classname="com.obsqura.testscripts.ManagePagesTest" time="4.294">
-    <system-out><![CDATA[Peaches
-https://groceryapp.uniqassosiates.com/admin/pages/delete?del=791&page_ad=1
-https://groceryapp.uniqassosiates.com/admin/pages/delete?del=791&page_ad=1
-https://groceryapp.uniqassosiates.com/admin/pages/delete?del=791&page_ad=1
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 17535
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="tocheckAlertMessageisShowingWhileupdateBothTitleandPayLimitin_ManagePaymentMethod" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.654">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 31879
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="updateBothTitleandPayLimitin_ManagePaymentMethod" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.687">
-    <system-out><![CDATA[[federalBank, 40000, Inactive, , Credit, 28422, Active, ]
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 32810
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="updatePayLimitin_ManagePaymentMethod" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.813">
-    <system-out><![CDATA[[federalBank, 40000, Inactive, , Credit, 1564, Active, ]
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 14658
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="updateTitlein_ManagePaymentMethod" classname="com.obsqura.testscripts.ManagePaymentMethodsTest" time="2.643">
-    <system-out><![CDATA[[federalBank, 40000, Inactive, , Credit, 1564, Active, ]
-]]></system-out>
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 13390
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="new_ListSliders" classname="com.obsqura.testscripts.ManageSliderTest" time="2.461">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 32112
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="Verify_resetButtonFunctionality" classname="com.obsqura.testscripts.PushNotificationTest" time="2.091">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 6637
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="tosendPushnotification" classname="com.obsqura.testscripts.PushNotificationTest" time="2.146">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 38074
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="verifyLogo[7rmart supermarket](1)" classname="com.obsqura.testscripts.VerifyLogonameTest" time="0.619">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 15356
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="toAddNewLocationtothe_ManageLocationPaged" classname="com.obsqura.testscripts.ManageLocationTest" time="2.548">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 10885
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="togetthelistofloactionbySearchingwithCountryandStateinthe_ManageLocationPaged" classname="com.obsqura.testscripts.ManageLocationTest" time="2.326">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 36038
-To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
-
-Only local connections are allowed.
-Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
-
-Microsoft Edge WebDriver was started successfully.
-]]></system-err>
-  </testcase>
-  <testcase name="tocreatea_newMobileSlider" classname="com.obsqura.testscripts.MobileSliderTest" time="3.498">
-    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.58 (4dc3f55bfaec25ee4e6acc8bd6b20d64b3b0b7bb) on port 17568
+  <testcase name="verifyUserCanAbletoViewLogoNameisAsPerExpectedLogoName[7rmart supermarket](1)" classname="com.obsqura.testscripts.VerifyLogonameTest" time="0.823">
+    <system-err><![CDATA[Starting Microsoft Edge WebDriver 112.0.1722.71 (0dac4e4620b8ce06154d15b1cb1db5936d178b02) on port 46116
 To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
 
 Only local connections are allowed.

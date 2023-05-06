@@ -2,23 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="classes" thread-count="2">
 	<parameter name="browser" value="chrome" />
-	<parameter name="browser" value="firefox" />
-	<parameter name="browser" value="edge" />
 	<listeners>
-		<listener class-name="com.obsqura.testscripts.Listeners" />
+		<listener class-name="Retry.Listeners" />
 	</listeners>
 	<test thread-count="5" name="Test">
-		<parameter name="bgcolorNew" value="rgba(220, 53, 69, 1)" />
-		<parameter name="bgcolorSearch" value="rgba(0, 123, 255, 1)" />
-		<parameter name="bgcolorReset" value="rgba(255, 193, 7, 1)" />
-		<parameter name="logoname" value="7rmart supermarket" />
-		<parameter name="remarks" value="Expense"></parameter>
 		<classes>
 			<class name="com.obsqura.testscripts.ManageExpenseTest" />
 			<class name="com.obsqura.testscripts.ManageSliderTest" />
 			<class name="com.obsqura.testscripts.LoginTest" />
-			<class name="com.obsqura.testscripts.VerifyLogonameTest" />
-			<class name="com.obsqura.testscripts.ExpenseCategoryTest" />
 		</classes>
 	</test>
 </suite>
