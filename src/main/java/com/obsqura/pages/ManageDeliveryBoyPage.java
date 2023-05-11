@@ -64,31 +64,35 @@ public class ManageDeliveryBoyPage {
 
 	}
 
-	public void enterNameForSearch(String value) {
+	public ManageDeliveryBoyPage enterNameForSearch(String value) {
 
 		pageutility.isElementDisplayed(nameforSearchElement);
 		nameforSearchElement.sendKeys(value);
+		return this;
 
 	}
 
-	public void clickSearchButtonforSearchin_ManageDeliveryboy() {
+	public ManageDeliveryBoyPage clickSearchButtonforSearchin_ManageDeliveryboy() {
 		waitutility.waitForElementClickable(driver, searchButtonforSearchElement);
 		pageutility.isElementDisplayed(searchButtonforSearchElement);
 		searchButtonforSearchElement.click();
+		return this;
 
 	}
 
-	public void enterEmailForSearch(String value) {
+	public ManageDeliveryBoyPage enterEmailForSearch(String value) {
 
 		pageutility.isElementDisplayed(emailforSearchElement);
 		emailforSearchElement.sendKeys(value);
+		return this;
 
 	}
 
-	public void enterPhoneForSearch(String value) {
+	public ManageDeliveryBoyPage enterPhoneForSearch(String value) {
 
 		pageutility.isElementDisplayed(phoneNoforSearchElement);
 		phoneNoforSearchElement.sendKeys(value);
+		return this;
 	}
 
 	public String tableData() {

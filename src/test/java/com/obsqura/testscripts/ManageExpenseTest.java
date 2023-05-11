@@ -23,8 +23,7 @@ public class ManageExpenseTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
 		manageexpensepage = new ManageExpensePage(driver);
-		manageexpensepage.selectSubcategoryManageExpense();
-		manageexpensepage.getheadingsofExpenseTable();
+		manageexpensepage.selectSubcategoryManageExpense().getheadingsofExpenseTable();
 		assertTrue(	manageexpensepage.getheadingsofExpenseTable().contains(ExcelUtility.getString(1, 0, "ManageExpense")),	"Table not contains these headings");
 	}
 
@@ -38,8 +37,7 @@ public class ManageExpenseTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
 		manageexpensepage = new ManageExpensePage(driver);
-		manageexpensepage.selectSubcategoryManageExpense();
-		manageexpensepage.clickNewButtonforAddingexpense().selectUser().enterDate().selectCategory().selectOrderId()
+		manageexpensepage.selectSubcategoryManageExpense().clickNewButtonforAddingexpense().selectUser().enterDate().selectCategory().selectOrderId()
 				.selectPrchaseId().selectExpensetype().enterAmount().enterRemarks().uploadFile()
 				.clickSaveButtonforAddingexpense();
 		assertTrue(manageexpensepage.isDisplayedAlertElement(),	"Alert box is not displaying after succesfull adding of new Expense Record");

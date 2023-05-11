@@ -23,10 +23,9 @@ public class ManageFooterTextTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(9, 0, "Categories"));
 		managefootertextpage = new ManageFooterTextPage(driver);
-		managefootertextpage.selectSubcategoryManageFooterText().clickEditButton().enterAddress().enterEmail();
-		String expectedData = managefootertextpage.getEmail();
-		managefootertextpage.enterPhoneNo().clickUpdateButton();
+		managefootertextpage.selectSubcategoryManageFooterText().clickEditButton().enterAddress().enterEmail().enterPhoneNo().clickUpdateButton();
 		assertTrue(managefootertextpage.displayAlertElement(),	"Footer Text Updated succesfully alert is not displayed");
+		String expectedData = managefootertextpage.getEmail();
 		String actualData = managefootertextpage.getTabledata();
 		assertTrue(actualData.contains(expectedData), "Updated data is not in the table");
 

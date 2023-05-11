@@ -1,6 +1,4 @@
 package com.obsqura.pages;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,10 +53,11 @@ public class ManageExpensePage {
 	@FindBy(xpath = "//button[@data-dismiss='alert']//ancestor::div[contains(@class,'alert-dismissible')]")
 	WebElement alertElement;
 
-	public void selectSubcategoryManageExpense() {
+	public ManageExpensePage selectSubcategoryManageExpense() {
 		waitutility.waitForElementClickable(driver, manageExpensesecondElement);
 		pageutility.isElementDisplayed(manageExpensesecondElement);
 		manageExpensesecondElement.click();
+		return this;
 
 	}
 

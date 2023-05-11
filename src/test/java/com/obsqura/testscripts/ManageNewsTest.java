@@ -23,8 +23,7 @@ public class ManageNewsTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(9, 0, "Categories"));
 		managenewspage = new ManageNewsPage(driver);
-		managenewspage.clickManageNewsPageCategory();
-		managenewspage.clickNewButtonElement().enterTextarea().clickSaveButtonElement();
+		managenewspage.clickManageNewsPageCategory().clickNewButtonElement().enterTextarea().clickSaveButtonElement();
 		assertTrue(managenewspage.isCheckAlertisDisplayedinManageNewspage(), "News is not created succesfully");
 
 	}

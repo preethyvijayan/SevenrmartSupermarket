@@ -23,9 +23,7 @@ public class ManageCategoryCategoryTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(15, 0, "Categories"));
 		managecategorycategorypage = new ManageCategoryCategoryPage(driver);
-		managecategorycategorypage.clickcategoryOptionin_ManageCategory().clickNewButonforaddingNewCategoryin_ManageCategory();
-		managecategorycategorypage.enterCategoryforaddingNewCategoryin_ManageCategory();
-		managecategorycategorypage.enterGroupforaddingNewCategoryin_ManageCategory().uploadFile().clicktopMenuRadiobuttonElement().clicksideMenuRadiobuttonElement().clickSaveButtonin_ManageCategory();
+		managecategorycategorypage.clickcategoryOptionin_ManageCategory().clickNewButonforaddingNewCategoryin_ManageCategory().enterCategoryforaddingNewCategoryin_ManageCategory().enterGroupforaddingNewCategoryin_ManageCategory().uploadFile().clicktopMenuRadiobuttonElement().clicksideMenuRadiobuttonElement().clickSaveButtonin_ManageCategory();
 		assertTrue(managecategorycategorypage.isAlertDisplayed(),"Alert information Message Category created succesfully is not displayed");
 
 	}

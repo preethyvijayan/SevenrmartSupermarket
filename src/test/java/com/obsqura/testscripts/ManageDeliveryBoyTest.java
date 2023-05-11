@@ -43,9 +43,8 @@ public class ManageDeliveryBoyTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(14, 0, "Categories"));
 		managedeliveryboypage = new ManageDeliveryBoyPage(driver);
-		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterNameForSearch(name);
+		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterNameForSearch(name).clickSearchButtonforSearchin_ManageDeliveryboy();
 		String expectedData = managedeliveryboypage.getTextFromUsernameforsearch();
-		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
 		String actualData = managedeliveryboypage.getresultTabledata();
 		assertTrue(actualData.contains(expectedData), "Search name is not included in table list");
 
@@ -62,9 +61,8 @@ public class ManageDeliveryBoyTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(14, 0, "Categories"));
 		managedeliveryboypage = new ManageDeliveryBoyPage(driver);
-		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterEmailForSearch(email);
+		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterEmailForSearch(email).clickSearchButtonforSearchin_ManageDeliveryboy();
 		String expectedData = managedeliveryboypage.getTextFromemailforsearch();
-		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
 		String actualData = managedeliveryboypage.getresultTabledata();
 		assertTrue(actualData.contains(expectedData), "Search email is not included in table list");
 	}
@@ -80,10 +78,8 @@ public class ManageDeliveryBoyTest extends Base {
 		categoryselectionpage = new CategorySelectionPage(driver);
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(14, 0, "Categories"));
 		managedeliveryboypage = new ManageDeliveryBoyPage(driver);
-		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterPhoneForSearch(phone);
-		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
+		managedeliveryboypage.clickSearchButtonin_ManageDeliveryboy().enterPhoneForSearch(phone).clickSearchButtonforSearchin_ManageDeliveryboy().clickSearchButtonforSearchin_ManageDeliveryboy();
 		String expectedData = managedeliveryboypage.getTextFromphoneforsearch();
-		managedeliveryboypage.clickSearchButtonforSearchin_ManageDeliveryboy();
 		String actualData = managedeliveryboypage.getresultTabledata();
 		assertTrue(actualData.contains(expectedData), "Search phone is not included in table list");
 	}

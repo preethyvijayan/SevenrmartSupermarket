@@ -29,9 +29,7 @@ public class ExpenseCategoryTest extends Base {
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(2, 0, "Categories"));
 		expensecategorypage = new ExpenseCategoryPage(driver);
-		expensecategorypage.clickNewButton();
-		expensecategorypage.enterTitle();
-		expensecategorypage.clickSavebutton();
+		expensecategorypage.clickNewButton().enterTitle().clickSavebutton();
 		assertTrue(expensecategorypage.isCheckAlertEnabled(),	"Alert for succesfully added the category is not displayed");
 		String expectedCategory = expensecategorypage.getTextFromTitle();
 		String actualCategory = expensecategorypage.getTableData();
@@ -50,9 +48,7 @@ public class ExpenseCategoryTest extends Base {
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(1, 0, "Categories"));
 		categoryselectionpage.clickSelectCategory(ExcelUtility.getString(2, 0, "Categories"));
 		expensecategorypage = new ExpenseCategoryPage(driver);
-		expensecategorypage.clickNewButton();
-		expensecategorypage.enterTitle();
-		expensecategorypage.clickResetbutton();
+		expensecategorypage.clickNewButton().enterTitle().clickResetbutton();
 		assertTrue(expensecategorypage.isCheckAlertEnabled(), "The reset is not working in the expense category page");
 
 	}

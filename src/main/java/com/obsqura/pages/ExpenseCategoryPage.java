@@ -53,17 +53,18 @@ public class ExpenseCategoryPage {
 	@FindBy(xpath = "//div[@class='card-header']//following::tr")
 	WebElement tableelement;
 
-	public void clickNewButton() {
+	public ExpenseCategoryPage clickNewButton() {
 		waitutility.waitForElementClickable(driver, newButtonElement);
 		pageutility.isElementDisplayed(newButtonElement);
 		newButtonElement.click();
+		return this;
 	}
 
-	public String enterTitle() {
+	public ExpenseCategoryPage enterTitle() {
 		pageutility.isElementDisplayed(titleElement);
 		String input = fakeutility.togetProductName();
 		titleElement.sendKeys(input);
-		return input;
+		return this;
 
 	}
 
@@ -78,16 +79,18 @@ public class ExpenseCategoryPage {
 		return pageutility.getElementText(expenseCategorySearchElement);
 	}
 
-	public void clickSavebutton() {
+	public ExpenseCategoryPage clickSavebutton() {
 		waitutility.waitForElementClickable(driver, saveButtonElement);
 		pageutility.isElementDisplayed(saveButtonElement);
 		saveButtonElement.click();
+		return this;
 	}
 
-	public void clickResetbutton() {
+	public ExpenseCategoryPage clickResetbutton() {
 		waitutility.waitForElementClickable(driver, resetButtonElement);
 		pageutility.isElementDisplayed(resetButtonElement);
 		resetButtonElement.click();
+		return this;
 	}
 
 	public ExpenseCategoryPage clickSearchbutton() {

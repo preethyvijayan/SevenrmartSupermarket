@@ -61,10 +61,11 @@ public class ManageCategoryCategoryPage {
 
 	}
 
-	public void enterCategoryforaddingNewCategoryin_ManageCategory() {
+	public ManageCategoryCategoryPage enterCategoryforaddingNewCategoryin_ManageCategory() {
 
 		pageutility.isElementDisplayed(categoryfieldElement);
 		categoryfieldElement.sendKeys(fakeutility.togetProductName());
+		return this;
 
 	}
 

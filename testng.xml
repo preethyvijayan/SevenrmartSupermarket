@@ -32,6 +32,7 @@
 			<class name="com.obsqura.testscripts.PushNotificationTest" />
 			<class name="com.obsqura.testscripts.VerifyLogonameTest" /> 
 
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
